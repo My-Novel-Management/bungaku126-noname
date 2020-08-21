@@ -55,17 +55,6 @@ def ep_xxx(w: World):
 
 def ch_main(w: World):
     return w.chapter('main',
-            )
-
-
-# Notes
-def writer_note(w: World):
-    return w.writer_note("覚書",
-            )
-
-
-def plot_note(w: World):
-    return w.writer_note("プロットメモ",
             w.plot_note("無名な人間がいた"),
             w.plot_note("彼は作家を目指していた"),
             w.plot_note("作家だけじゃない、音楽も、絵も、ゲームやシナリオ、果ては動画制作まで、",
@@ -79,7 +68,34 @@ def plot_note(w: World):
             w.plot_note("けれど彼女はそれをよしとはせず、引退して、ひっそり暮らしたりと言い出す"),
             w.plot_note("彼は彼女から人気を引き継いだ"),
             w.plot_note("人気者になった彼"),
-            w.plot_note(""),
+            w.plot_note("ネット上では自分の知らないところでその名前が出る"),
+            w.plot_note("有名になったと錯覚するが、それが自分の才能とは何の関係もないことを知る"),
+            w.plot_note("そこでネタバラシをして名前を自分のものにしようと考えたが、",
+                "コメントで誰かが「もし〜だったら」という仮定の話を書いていて、",
+                "その流れからどう考えてもマイナスにしかならないと判断する"),
+            w.plot_note("自分の名前ではない名前が独り歩きし、それを演じ続ける中で、",
+                "悪質なもの、悪戯などが増えてくる"),
+            w.plot_note("それは「かつて有名だった私へ」と題したブログにかかれていたことと同じ内容だった"),
+            w.plot_note("有名になりたい、と色々がんばっていた日常の方がずっと楽しく、充実していたこと"),
+            w.plot_note("いざ有名になっても制約が多く、また自分ではない自分が独り歩きしてしまって、",
+                "それが悪さをしたりする。誰かに傷つけられたりする"),
+            w.plot_note("最後に書かれていたのは「わたしは無名になりたい」だった"),
+            w.plot_note("そのブログの主は自殺した"),
+            w.plot_note("有名が彼女を殺したのだ"),
+            w.plot_note("無名を手に入れた同棲の彼女が言う",
+                ""),
+            # TODO
+            )
+
+
+# Notes
+def writer_note(w: World):
+    return w.writer_note("覚書",
+            )
+
+
+def plot_note(w: World):
+    return w.writer_note("プロットメモ",
             "名前はまだない。という出だし",
             "有名になることが人生の目標だったと書いている",
             "残っていたブログを記者が読んでいる、というてい",
