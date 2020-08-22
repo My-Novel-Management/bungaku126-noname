@@ -55,6 +55,7 @@ def ep_xxx(w: World):
 
 def ch_main(w: World):
     return w.chapter('main',
+            "main plot",
             w.plot_setup("無名の男がいた"),
             w.plot_setup("男は色々なことをして有名になろうとしていたが、全て失敗していた"),
             w.plot_setup("その男とルームシェアして暮らす女性がいた"),
@@ -67,6 +68,14 @@ def ch_main(w: World):
             w.plot_turnpoint("中の人が男だとばれる"),
             w.plot_resolve("炎上し、彼女のアカウントだけでなく、男のアカウントも全て削除する"),
             w.plot_resolve("$mumeは彼女にプロポーズされ、そこで初めて自分の名を呼ばれた"),
+            "sub plot",
+            w.plot_setup("シェアハウスで同居していた彼氏に出ていかれた", about="yuna"),
+            w.plot_setup("いつの間にかシェアハウスに$mumeと取り残された", about="yuna"),
+            w.plot_develop("（元彼氏がやっていた）ゲーム実況をやってみる", about="yuna"),
+            w.plot_develop("実況者として人気になってしまう", about="yuna"),
+            w.plot_turnpoint("SNSまで追いかけてきてネットストーカーされる", about="yuna"),
+            w.plot_develop("彼に自分の代わりにゲーム実況者になってもらう", about="yuna"),
+            w.plot_resolve("何もなくても一緒にいたいと思った$yunaは彼の名を呼びプロポーズをした", about="yuna"),
             w.plot_note("無名な人間がいた"),
             w.plot_note("彼は作家を目指していた"),
             w.plot_note("作家だけじゃない、音楽も、絵も、ゲームやシナリオ、果ては動画制作まで、",
@@ -129,8 +138,9 @@ def plot_note(w: World):
 
 def chara_note(w: World):
     return w.writer_note("人物メモ",
-            "有名になりたい男",
-            "有名になってる女",
+            "・有名になりたい男",
+            "・有名になってしまった女",
+            "・彼女の元恋人で、同棲していたが逃げ出した男",
             "特に稼ぐとか有名になりたいとかの気持ちはなくゲームの実況配信を行っていたら、知らない間に有名になっていた",
             "有名事件を追う記者",
             "依頼されて事件の調査をし始めた。そこである動画配信者に辿り着く",
@@ -149,6 +159,8 @@ def theme_note(w: World):
             "デメリットは私生活に他人が侵食しやすい",
             "また有象無象の色々な人間が近づいてくる",
             "人生の防衛が難しくなる点か",
+            "本当にすごい人は、無名なんだ。無名の中にこそ英雄はいる。そういう世界観を描く",
+            "だからこそ、$yunaの存在は、無名の本当にすごいところを見せる為の存在である",
             )
 
 
