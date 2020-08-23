@@ -31,7 +31,7 @@ from config import ASSET
 
 # Constant
 TITLE = "無名"
-MAJOR, MINOR, MICRO = 0, 2, 0
+MAJOR, MINOR, MICRO = 0, 3, 0
 COPY = "名前に振り回された人生でした"
 ONELINE = "約３万字の文学短編。有名になりたい男と無名になりたい女の人生が、交錯する"
 OUTLINE = "有名になりたい男は試行錯誤するけれど、その間にも同居するその界隈で有名な女は更に有名になり、無名になりたいと願う。二人は人生の交換を申し出た"
