@@ -48,34 +48,60 @@ RELEASED = (1, 1, 2020)
 
 
 # Episodes
-def ep_xxx(w: World):
-    return w.episode('episode_title',
-            outline="description")
+def ep_anonymous(w: World):
+    return w.episode("無名",
+            w.plot_setup("無名の男がいた"),
+            w.plot_setup("$mumeは色々なことをして有名になろうとしていたが、全て失敗していた"),
+            w.plot_setup("$mumeは付き合っていた彼女に愛想をつかされ、失恋した"),
+            w.plot_setup("$mumeとシェアハウスをして暮らしていた芸人$ishiがいた"),
+            w.plot_setup("$ishiには半同棲の彼女$yunaがいた", about="yuna"),
+            w.plot_setup("$ishiは彼女を部屋に連れ込み、ほぼ半同棲生活だった"),
+            w.plot_turnpoint("$yunaは$ishiにふられてしまう", about="yuna"),
+            w.plot_turnpoint("$mumeは家の前で泣きつかれていた$yunaを拾った"),
+            )
+
+def ep_alternate(w: World):
+    return w.episode("代替",
+            w.plot_develop("$mumeは出ていった$ishiが帰ってくるまでシェアハウスで暮せばいいと提案する"),
+            w.plot_develop("$mumeと$yunaの同棲のような生活が始まる"),
+            w.plot_develop("$yunaは自発性がなく、一日ぼーっとしていた"),
+            w.plot_develop("掃除していて$ishiが楽しそうにやっていた人殺しのゲームをやってみるが、恐くて一人ではできなかった", about="yuna"),
+            w.plot_turnpoint("$yunaは$ishiがやっていたゲーム実況をしてみたいと言うので、$mumeが準備をして配信方法を教えてやった"),
+            w.plot_develop("$yunaはゲーム実況配信をし始める"),
+            w.plot_develop("$yunaは人気実況者になった"),
+            w.plot_develop("$mumeも彼女を真似て実況配信してみたが、全然人気は出なかった"),
+            w.plot_turnpoint("コメントでリアルの$yunaを知ってそうな人が現れて恐くなった", about="yuna"),
+            w.plot_turnpoint("$mumeは$yunaと実況の中の人を交代し、人気実況者としての生活を始めることになった"),
+            )
+
+def ep_famous(w: World):
+    return w.episode("有名",
+            w.plot_develop("$mumeは人気の彼女になりきろうと必死に彼女のことを勉強する"),
+            w.plot_develop("ストーカー気質なコメントをする人物を炙り出そうと考える"),
+            w.plot_develop("$ishiから連絡が入る", about="yuna"),
+            w.plot_develop("$ishiと久しぶりにデートする、と$mumeに報告する", about="yuna"),
+            w.plot_develop("$ishiには既に別の女がいると知る（その女からの連絡）", about="yuna"),
+            w.plot_develop("彼女は更に人気となる"),
+            w.plot_develop("男は彼女の中の人として人気になる"),
+            w.plot_turnpoint("中の人が男だとばれる"),
+            )
+
+def ep_lostname(w: World):
+    return w.episode('喪失',
+            w.plot_resolve("炎上し、彼女のアカウントだけでなく、男のアカウントも全て削除する"),
+            w.plot_resolve("ネットストーカーの犯人は元彼氏だった", about="yuna"),
+            w.plot_resolve("元彼氏は彼女の人気に激しく嫉妬していた", about="yuna"),
+            w.plot_resolve("何もなくても一緒にいたいと思った$yunaは彼の名を呼びプロポーズをした", about="yuna"),
+            w.plot_resolve("$mumeは彼女にプロポーズされ、そこで初めて自分の名を呼ばれた"),
+            )
 
 
 def ch_main(w: World):
     return w.chapter('main',
-            "main plot",
-            w.plot_setup("無名の男がいた"),
-            w.plot_setup("男は色々なことをして有名になろうとしていたが、全て失敗していた"),
-            w.plot_setup("その男とルームシェアして暮らす女性がいた"),
-            w.plot_turnpoint("彼女はゲーム実況をしてみたいと言うので、手伝った"),
-            w.plot_develop("彼女は人気実況者になった"),
-            w.plot_develop("彼女をマネていろいろやってみたけれど、男は全然人気が出なかった"),
-            w.plot_turnpoint("男は彼女の中の人として交代した"),
-            w.plot_develop("彼女は更に人気となる"),
-            w.plot_develop("男は彼女の中の人として人気になる"),
-            w.plot_turnpoint("中の人が男だとばれる"),
-            w.plot_resolve("炎上し、彼女のアカウントだけでなく、男のアカウントも全て削除する"),
-            w.plot_resolve("$mumeは彼女にプロポーズされ、そこで初めて自分の名を呼ばれた"),
-            "sub plot",
-            w.plot_setup("シェアハウスで同居していた彼氏に出ていかれた", about="yuna"),
-            w.plot_setup("いつの間にかシェアハウスに$mumeと取り残された", about="yuna"),
-            w.plot_develop("（元彼氏がやっていた）ゲーム実況をやってみる", about="yuna"),
-            w.plot_develop("実況者として人気になってしまう", about="yuna"),
-            w.plot_turnpoint("SNSまで追いかけてきてネットストーカーされる", about="yuna"),
-            w.plot_develop("彼に自分の代わりにゲーム実況者になってもらう", about="yuna"),
-            w.plot_resolve("何もなくても一緒にいたいと思った$yunaは彼の名を呼びプロポーズをした", about="yuna"),
+            ep_anonymous(w),
+            ep_alternate(w),
+            ep_famous(w),
+            ep_lostname(w),
             w.plot_note("無名な人間がいた"),
             w.plot_note("彼は作家を目指していた"),
             w.plot_note("作家だけじゃない、音楽も、絵も、ゲームやシナリオ、果ては動画制作まで、",
@@ -161,6 +187,12 @@ def theme_note(w: World):
             "人生の防衛が難しくなる点か",
             "本当にすごい人は、無名なんだ。無名の中にこそ英雄はいる。そういう世界観を描く",
             "だからこそ、$yunaの存在は、無名の本当にすごいところを見せる為の存在である",
+            "名前にこだわるのは「嫉妬心」から",
+            "どう「嫉妬」を描くか、にかかってくる",
+            "色々な嫉妬の形があって、でも根源は「自分にないもの」に対する欲求",
+            "それは憧れという形を取っているかも知れない",
+            "恋愛もまた憧れと嫉妬の間かも知れない",
+            "名前のこと、有名になりたい、というのも結局は自分が知っている人たちによく思われたいというだけかも",
             )
 
 
