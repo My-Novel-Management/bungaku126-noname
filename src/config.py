@@ -26,6 +26,9 @@ ASSET = {
             ),
         "WORDS": (
             # (tag / name / cate / info)
+            ("theblog", "かつて有名だった私へ"),
+            ("line", "ＬＩＮＥ"),
+            ("pc", "ＰＣ"),
             ),
         "RUBIS": (
             # (origin / rubi / exclusions / always)
