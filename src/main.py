@@ -31,7 +31,7 @@ from config import ASSET
 
 # Constant
 TITLE = "無名"
-MAJOR, MINOR, MICRO = 0, 4, 0
+MAJOR, MINOR, MICRO = 0, 5, 0
 COPY = "名前に振り回された人生でした"
 ONELINE = "約３万字の文学短編。有名になりたい男と無名になりたい女の人生が、交錯する"
 OUTLINE = "有名になりたい男は試行錯誤するけれど、その間にも同居するその界隈で有名な女は更に有名になり、無名になりたいと願う。二人は人生の交換を申し出た"
@@ -160,8 +160,24 @@ def ep_lostname(w: World):
             w.plot_note("$mumeは全てを失い、自分の才能にも絶望し、名前も失った"),
             w.plot_note("$mumeは$yunaに今後どうするのかと尋ねる"),
             w.plot_resolve("何もなくても一緒にいたいと思った$yunaは彼の名を呼びプロポーズをした", about="yuna"),
+            w.plot_note("全てを失い、名前だけでなく、何もかもが無になった$mume"),
+            w.plot_note("住む場所も失って、途方にくれていたところに、$yunaが現れる"),
+            w.plot_note("$yunaは$mumeに色々と助けてもらったから、今困っているあなたを助けたいと申し出る"),
+            w.plot_note("自分には何もない。何の価値もない。そう反論する$mume"),
+            w.plot_note("$yunaは「わたしが欲しかったのは無名」と答えた"),
+            w.plot_note("$yunaが$theblogの作者だった",
+                "あの作者は生きていたのだ"),
+            w.plot_note("$yunaは初めてそこで彼女の半生を語った"),
+            w.plot_note("親が芸能関係者だった"),
+            w.plot_note("子役として他の子よりも大人たちの望む通りにできただけ"),
+            w.plot_note("でもそのちょっとしたことが、人生を狂わせた"),
+            w.plot_note("逃げるように留学し、自分の名前が消えた頃に日本へと戻ってきた"),
+            w.plot_note("$yunaは名前があること、有名なことから、逃げたかった"),
+            w.plot_note("$yunaは$mumeの良さを話す"),
             w.plot_note("$yunaは$mumeの不器用だけどそこにある優しさと弱さが愛おしくなり、自分に大切な人間が誰なのか気づいた"),
+            w.plot_note("それでも$mumeは有名になりたのか、と彼女は尋ねる"),
             w.plot_resolve("$mumeは彼女にプロポーズされ、そこで初めて自分の名を呼ばれた"),
+            w.plot_note("$yunaは"),
             )
 
 
