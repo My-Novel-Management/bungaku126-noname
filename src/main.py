@@ -307,13 +307,50 @@ def ep_lostname(w: World):
             "有名になりたいという思いは昇華されたのか？",
             )
 
+# Episodes (newer)
+def ep_annoymous_man(w: World):
+    return w.episode("無名な男",
+            )
+
+def ep_catch_her(w: World):
+    return w.episode("彼女を拾う",
+            )
+
+def ep_streamer(w: World):
+    return w.episode("ゲーム実況者",
+            )
+
+def ep_lose_days(w: World):
+    return w.episode("失敗の日々",
+            )
+
+def ep_her_name(w: World):
+    return w.episode("彼女の名前",
+            )
+
+def ep_losther(w: World):
+    return w.episode("$yunaの失踪",
+            )
+
+def ep_selection(w: World):
+    return w.episode("$mumeの選択",
+            )
+
+def ep_hisname(w: World):
+    return w.episode("$yunaは彼の名を呼んだ",
+            )
+
 
 def ch_main(w: World):
     return w.chapter('main',
-            ep_anonymous(w),
-            ep_alternate(w),
-            ep_famous(w),
-            ep_lostname(w),
+            ep_annoymous_man(w),
+            ep_catch_her(w),
+            ep_streamer(w),
+            ep_lose_days(w),
+            ep_her_name(w),
+            ep_losther(w),
+            ep_selection(w),
+            ep_hisname(w),
             )
 
 
