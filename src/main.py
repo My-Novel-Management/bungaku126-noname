@@ -310,34 +310,53 @@ def ep_lostname(w: World):
 # Episodes (newer)
 def ep_annoymous_man(w: World):
     return w.episode("無名な男",
+            w.plot_setup("$mumeは名前を呼ばれない、無名の男だった"),
+            w.plot_setup("$mumeはシェアハウスで$ishiと暮らしていた"),
+            w.plot_setup("$ishiは芸人で新しい彼女$yunaをよく連れ込んでいた"),
+            w.plot_setup("$yunaは$ishiと付き合っている", about="yuna"),
+            w.plot_setup("$mumeはブログ「$theblog」を読んで、それでも有名に憧れを抱いていた"),
+            w.plot_setup("$mumeはイラストレーター志望の$mutsuと付き合っていた"),
+            w.plot_setup("$mutsuが公募に通り、プロの道が開ける"),
+            w.plot_setup("$mumeは$mutsuから別れると連絡を受ける"),
             )
 
 def ep_catch_her(w: World):
     return w.episode("彼女を拾う",
+            w.plot_turnpoint("$ishiが$yunaを捨て、有名タレントと付き合い始める"),
+            w.plot_turnpoint("$ishiに捨てられる", about="yuna"),
+            w.plot_turnpoint("$mumeは捨てられた$yunaを拾う"),
             )
 
 def ep_streamer(w: World):
     return w.episode("ゲーム実況者",
+            w.plot_develop("$mumeは$yunaにゲーム実況配信のやり方を教えた"),
+            w.plot_develop("$yunaは人気実況者となる"),
             )
 
 def ep_lose_days(w: World):
     return w.episode("失敗の日々",
+            w.plot_develop("$mumeは公募に出していた小説が次々落選する"),
             )
 
 def ep_her_name(w: World):
     return w.episode("彼女の名前",
+            w.plot_turnpoint("ブログから$yunaがかつて有名子役だったことがバレる"),
             )
 
 def ep_losther(w: World):
     return w.episode("$yunaの失踪",
+            w.plot_develop("$yunaはシェアハウスから逃げ出す"),
             )
 
 def ep_selection(w: World):
     return w.episode("$mumeの選択",
+            w.plot_resolve("$mumeは失踪した$yunaを見つけ出した"),
             )
 
 def ep_hisname(w: World):
     return w.episode("$yunaは彼の名を呼んだ",
+            w.plot_resolve("$yunaは$mumeにプロポーズする", about="yuna"),
+            w.plot_resolve("$mumeは$yunaに「名前」を呼ばれた"),
             )
 
 
