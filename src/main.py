@@ -310,6 +310,8 @@ def ep_lostname(w: World):
 # Episodes (newer)
 def ep_annoymous_man(w: World):
     return w.episode("無名な男",
+            "主人公の名前は最後まで書かないこと",
+            "自動的に「一人称」作品となる",
             w.plot_setup("$mumeは名前を呼ばれない、無名の男だった"),
             w.plot_setup("$mumeはシェアハウスで$ishiと暮らしていた"),
             w.plot_setup("$ishiは芸人で新しい彼女$yunaをよく連れ込んでいた"),
@@ -351,12 +353,35 @@ def ep_losther(w: World):
 def ep_selection(w: World):
     return w.episode("$mumeの選択",
             w.plot_resolve("$mumeは失踪した$yunaを見つけ出した"),
+            w.plot_resolve("初めて訪れた$yunaの住まいは全てが揃った高級住宅だった"),
+            )
+
+def ep_yuna_history(w: World):
+    return w.episode("$yunaの人生",
+            w.plot_resolve("$yunaは$mumeに自分の子役時代のことを語る"),
+            w.plot_resolve("両親が芸能関係者だったことから、物心ついた頃には既に片足を芸能界に突っ込んでいた"),
+            w.plot_resolve("赤ん坊でテレビデビューし、その後順調に子役として育つ"),
+            w.plot_resolve("連続テレビドラマで人気になり、子役として毎日テレビに出るという忙しさになる"),
+            w.plot_resolve("両親はプロデュース専業に鞍替えし、自分の事務所を設立し、グッズ販売なども手がけるようになった"),
+            w.plot_resolve("$yunaは普通の生活が送りたかったが小学校はまともに行けず、中学は通信教育だった"),
+            w.plot_resolve("芸能界を引退したまま復帰する気のない娘と、残った会社を巡り、両親が対立。離婚調停になった"),
+            w.plot_resolve("高校には入らず、カナダに留学をする"),
+            w.plot_resolve("日本に帰ってきたのは二十歳を過ぎてからで、その頃には街からかつての自分の名前は消えていた"),
             )
 
 def ep_hisname(w: World):
     return w.episode("$yunaは彼の名を呼んだ",
+            w.plot_resolve("有名というのは自分の人生を売り渡す行為だと$yunaは言う"),
+            w.plot_resolve("無名なのは人生がないのと同じじゃないかと$mumeは言う"),
+            w.plot_resolve("$yunaは$mumeの人生が無意味でも無駄でも空虚でもないと反論する"),
+            w.plot_resolve("$mumeは真面目で面倒見がよく、他人のことに色々と気付ける人間で"),
+            w.plot_resolve("$yunaは$mumeによって助けられた"),
+            w.plot_resolve("この世界には無名の人の方がずっと多く、そういう無名の人によって世界は支えられている"),
+            w.plot_resolve("日々の生活では名前じゃなく、人の繋がりによって支えられていると"),
+            w.plot_resolve("いつ折れてもおかしくなかった自分を支えたのは、$mumeだったと"),
             w.plot_resolve("$yunaは$mumeにプロポーズする", about="yuna"),
             w.plot_resolve("$mumeは$yunaに「名前」を呼ばれた"),
+            w.plot_resolve("その時本当は「無名」じゃなかったと分かった"),
             )
 
 
@@ -369,6 +394,7 @@ def ch_main(w: World):
             ep_her_name(w),
             ep_losther(w),
             ep_selection(w),
+            ep_yuna_history(w),
             ep_hisname(w),
             )
 
