@@ -332,12 +332,16 @@ def ep_catch_her(w: World):
 def ep_streamer(w: World):
     return w.episode("ゲーム実況者",
             w.plot_develop("$mumeは$yunaにゲーム実況配信のやり方を教えた"),
+            w.plot_develop("$yunaはゲームを楽しむようになり、日々に笑顔が戻る"),
             w.plot_develop("$yunaは人気実況者となる"),
+            w.plot_develop("$mumeも同じようにやってみたが"),
             )
 
 def ep_lose_days(w: World):
     return w.episode("失敗の日々",
+            w.plot_develop("一方$mumeは相変わらず成功から遠ざかっていた"),
             w.plot_develop("$mumeは公募に出していた小説が次々落選する"),
+            w.plot_develop("ある日、$yunaから実況のコメントに恐い人が出ると相談される"),
             )
 
 def ep_her_name(w: World):
@@ -347,11 +351,18 @@ def ep_her_name(w: World):
 
 def ep_losther(w: World):
     return w.episode("$yunaの失踪",
-            w.plot_develop("$yunaはシェアハウスから逃げ出す"),
+            w.plot_develop("$yunaはシェアハウスに戻ってこなくなった"),
+            w.plot_turnpoint("$mumeに落選した公募の主催出版社の編集から一度会いませんかと連絡がある"),
             )
 
 def ep_selection(w: World):
     return w.episode("$mumeの選択",
+            w.plot_develop("$mumeは出版社の人間から声をかけてもらい会う予定になっていた"),
+            w.plot_turnpoint("$mumeは$yunaも同じ出版社からブログの書籍化の話を持ちかけられていたと知る"),
+            w.plot_resolve("$mumeは席を外して、$yunaを探しに飛び出した"),
+            w.plot_resolve("$mumeは触れようとしなかった彼女の過去と、過去の繋がりを調べる"),
+            w.plot_resolve("$ishiから彼女の異母兄弟の連絡先を聞き出す"),
+            w.plot_resolve("今の居場所を知る"),
             w.plot_resolve("$mumeは失踪した$yunaを見つけ出した"),
             w.plot_resolve("初めて訪れた$yunaの住まいは全てが揃った高級住宅だった"),
             )
