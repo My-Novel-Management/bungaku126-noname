@@ -316,14 +316,22 @@ def ep_annoymous_man(w: World):
             w.plot_setup("$mumeはシェアハウスで$ishiと暮らしていた"),
             w.plot_setup("$ishiは芸人で新しい彼女$yunaをよく連れ込んでいた"),
             w.plot_setup("$yunaは$ishiと付き合っている", about="yuna"),
-            w.plot_setup("$mumeはブログ「$theblog」を読んで、それでも有名に憧れを抱いていた"),
             w.plot_setup("$mumeはイラストレーター志望の$mutsuと付き合っていた"),
+            w.plot_setup("$mumeは$mutsuとよく「有名」について討論した"),
+            w.plot_note("$mumeは「有名になること」についてよく$mutsuと話していた"),
+            w.plot_note("$mutsuは自分が有名になることは「ついで」だと言った。作品の方がずっと大事だと"),
+            w.plot_setup("$mumeはブログ「$theblog」を読んで、それでも有名に憧れを抱いていた"),
             w.plot_setup("$mutsuが公募に通り、プロの道が開ける"),
             w.plot_setup("$mumeは$mutsuから別れると連絡を受ける"),
             )
 
 def ep_catch_her(w: World):
     return w.episode("彼女を拾う",
+            w.plot_setup("$mumeは再び大切なものを失った"),
+            w.plot_setup("$mumeはいつも「無」になってしまう"),
+            w.plot_note("$mumeの実家は既に整地され、タワーマンション建設予定地になっている"),
+            w.plot_note("周囲も開発が進み、古い店舗はどんどん看板を下ろしていく"),
+            w.plot_note("人間だけでなく、街も有名なものたちに無名が虐げられていた"),
             w.plot_turnpoint("$ishiが$yunaを捨て、有名タレントと付き合い始める"),
             w.plot_turnpoint("$ishiに捨てられる", about="yuna"),
             w.plot_turnpoint("$mumeは捨てられた$yunaを拾う"),
@@ -560,6 +568,8 @@ def stage_note(w: World):
             "割といい感じのオーナーだが、独り者でちょっと変わった部分もある",
             "高円寺あたりの場所で",
             "場所明記はしない？",
+            "田端は山手線で一番無名な駅らしい",
+            "イメージする場所は田端にする",
             )
 
 def about_materials(w: World):
