@@ -223,12 +223,15 @@ def ep_dontwork_mume(w: World):
 
 def ep_popular_streamer(w: World):
     return w.episode("人気実況者",
-            # TODO
             w.plot_develop("$yunaは人気実況者となる"),
             w.plot_note("一月もすると$yunaの配信には人が集まるようになっていた"),
-            w.plot_note("身バレが恐いというのでボイスチェンジャーのアプリを使って声を変えたり、アニメキャラで配信するようになった"),
-            w.plot_note("それが更に人気になり、$yunaの実況はそこそこの人気コンテンツとなる"),
-            w.plot_develop("$mumeも同じようにやってみたが"),
+            w.plot_note("傍で見ていると彼女は人を喜ばせることをよく理解しているようで、それも無意識にそのリアクションをしているようだった"),
+            w.plot_note("$mumeは$yunaにそのことについて聞いてみた"),
+            w.plot_note("彼女は別に意識をしていないと答えた"),
+            w.plot_note("$mumeは徐々に$yunaの人気が羨ましくなってきて、あまり部屋に入らないようになった"),
+            w.plot_develop("$mumeは実況で人気になることについて考えた"),
+            # TODO
+            w.plot_note(""),
             w.plot_note("$mumeもかつて実況に挑戦したことがあったが、全然人気が出ずにそのうちにやらなくなった"),
             w.plot_note("久しぶりに実況をやってみたが、人数は全然増えない"),
             w.plot_note("ここでも$mumeは無名のままだった"),
