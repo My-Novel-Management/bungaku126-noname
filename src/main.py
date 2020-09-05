@@ -230,11 +230,13 @@ def ep_popular_streamer(w: World):
             w.plot_note("彼女は別に意識をしていないと答えた"),
             w.plot_note("$mumeは徐々に$yunaの人気が羨ましくなってきて、あまり部屋に入らないようになった"),
             w.plot_develop("$mumeは実況で人気になることについて考えた"),
-            # TODO
-            w.plot_note(""),
-            w.plot_note("$mumeもかつて実況に挑戦したことがあったが、全然人気が出ずにそのうちにやらなくなった"),
-            w.plot_note("久しぶりに実況をやってみたが、人数は全然増えない"),
-            w.plot_note("ここでも$mumeは無名のままだった"),
+            w.plot_note("色々な実況や配信、動画を見て回る"),
+            w.plot_note("そこもまた小説と同じで、何かしら元から有名な人間が多く人気を集めていたが、それでも中には$yunaのようなぽっと出の新人もいた"),
+            w.plot_note("人気がある人はやはり何かしら特徴がある"),
+            w.plot_note("でも$mume自身がそれになれるかといったら無理だとしか思えなかった"),
+            w.plot_note("かつて自分が投稿した動画を発掘して見直した"),
+            w.plot_note("自己満足、といってよかった"),
+            w.plot_note("大半のものは自己満足でしかないのだ、と理解して、その動画を削除した"),
             )
 
 def ep_lose_days(w: World):
@@ -253,6 +255,8 @@ def ep_lose_days(w: World):
             w.plot_note("自分でファンを持っていない、平均値の作家志望者はよっぽどいいアイデアを見つけてものにするしか方法はないと"),
             w.plot_note("今や文芸の世界ですら「有名人」でないと厳しいのだった"),
             w.plot_develop("$mumeは小説を諦めた"),
+            w.plot_note("徹夜して今まで自分が書いたものに、本当に才能はないのかと探した"),
+            w.plot_note("けれど朝になっても何も感動は見つからず、そのデータ全てを$mumeは削除した"),
             )
 
 def ep_her_name(w: World):
@@ -290,13 +294,80 @@ def ep_losther(w: World):
 def ep_selection(w: World):
     return w.episode("$mumeの選択",
             w.plot_develop("$mumeは出版社の人間から声をかけてもらい会う予定になっていた"),
+            w.plot_note("$mumeは編集者と出会う"),
+            w.plot_note("一次選考で落選した作品を見て、書き直してキャラ文芸の方の公募に出してみないかと誘われる"),
+            w.plot_note("$mumeは自分の作品のどこがよかったのか聞いたが、編集者はうまく言えない"),
+            w.plot_note("話を考えさせてほしいと、一旦持ち帰ることにした"),
             w.plot_turnpoint("$mumeは$yunaも同じ出版社からブログの書籍化の話を持ちかけられていたと知る"),
-            w.plot_resolve("$mumeは席を外して、$yunaを探しに飛び出した"),
+            w.plot_note("話の中でライターの仕事をしていると言った流れから$yunaのことが話題にでる"),
+            w.plot_note("編集者は$yunaが「$theblog」の主だと分かって声をかけていたとおもらしする"),
+            w.plot_note("$mumeは帰ってから再度あのブログを読み返す"),
+            w.plot_note("そこに書かれたコメントの中に$yunaが書いたらしきものを見つける"),
+            w.plot_note("そこには何度も死を選ぼうとして選べなかったけれど、今度こそはというようなことが書かれていた"),
             w.plot_resolve("$mumeは触れようとしなかった彼女の過去と、過去の繋がりを調べる"),
-            w.plot_resolve("$ishiから彼女の異母兄弟の連絡先を聞き出す"),
-            w.plot_resolve("今の居場所を知る"),
-            w.plot_resolve("$mumeは失踪した$yunaを見つけ出した"),
+            w.plot_note("$mumeは$yunaについて調べようと$ishiに連絡を取る"),
+            w.plot_note("$ishiと会い、彼女とどこでどういう風に出会ったのか詳しく聞く"),
+            w.plot_note("$yunaは居酒屋で、といっていたが、よくプロデューサーが芸能人を連れてくる隠れ家的なイタリアンバーだった"),
+            )
+
+def ep_yuna_info(w: World):
+    return w.episode("$yunaの情報",
+            w.plot_resolve("$yunaの過去について知る人間を巡って、彼女の居場所を探す"),
+            w.plot_note("バーで$yunaのことを聞く"),
+            w.plot_note("よく一人で飲みに来ていて、数日前にも一人できたと"),
+            w.plot_note("居場所は知らないと言われた"),
+            w.plot_note("子役時代のことを知る人を当たる"),
+            w.plot_note("ライターのツテを頼って引退した芸能マネージャーを知る"),
+            w.plot_note("配達屋をやったりして日銭を稼いでいた男は子役時代について語る"),
+            w.plot_note("有名であることがその人や周囲を壊していく姿を色々見てきたと言う"),
+            w.plot_note("男は言う。有名っていうのは自分の人生を千切って投げ売りしているようなものだと"),
+            w.plot_note("そこまでしても有名なんて大半が一時的なもので、後にはその名前をなんとかやりくりして生きていくしかないと"),
+            w.plot_note("彼女は早く引退してよかったと語る"),
+            w.plot_note("彼女の元マネージャーに連絡がついた"),
+            )
+
+def ep_yuna_old_manager(w: World):
+    return w.episode("$yunaの元マネージャー",
+            w.plot_resolve("$yunaの元マネージャーに出会う"),
+            w.plot_note("彼女の元マネージャーはフリーペーパーを作っていた"),
+            w.plot_note("街の小さな話題やちょっとした話題の人を掲載する"),
+            w.plot_note("もう芸能界は懲り懲りだと言っていた"),
+            w.plot_note("最近は全然連絡を取っていないが留学から帰ってきた時に一度だけ連絡があったと"),
+            w.plot_note("彼女は自分の名前を酷く気にしていて、町中から完全に名前が消えることを願っていた"),
+            w.plot_note("そして壊れた家族とは縁を切ってしまったと"),
+            w.plot_note("しかし彼女の母親だけは探し出して連絡をつけたと聞いた"),
+            w.plot_note("彼女の母親の連絡先を教えてもらう"),
+            )
+
+def ep_yuna_mother(w: World):
+    return w.episode("$yunaの母親",
+            w.plot_resolve("$yunaの母親に出会う"),
+            w.plot_note("彼女の母親は飲み屋をやっていた"),
+            w.plot_note("金を色々使い込んで、借金をして、なんとか店をやっていた"),
+            w.plot_note("彼女とは全然似ていないようで、料理ができないとか似ている部分もあった"),
+            w.plot_note("有名子役の母親という立場になったのに、あの子には可愛そうなことをしたと言う"),
+            w.plot_note("全然連絡が取れず、今も謝りたい、会いたいと言い出す"),
+            w.plot_note("$mumeは居場所が分かったら連絡すると約束をした"),
+            )
+
+def ep_ishiwaki(w: World):
+    return w.episode("$ishiの情報",
+            w.plot_resolve("$ishiから$yunaの居場所を教わる"),
+            w.plot_note("$mumeはシェアハウスに$ishiが戻ってきて、出ていく準備をしているのを見る"),
+            w.plot_note("移住して田舎暮らしをする番組に出演が決まり、引き払うらしい"),
+            w.plot_note("$ishiは彼なりに有名になることを模索していた"),
+            w.plot_note("彼は「選り好みなんてしてられる立場じゃないんだ」と言う"),
+            w.plot_note("$yunaへの未練こそあったが、自分みたいな人間と一緒になることはないと"),
+            w.plot_note("$ishiは$yunaが元子役だと薄々感づいていたらしい"),
+            w.plot_note("$ishiは$yunaの住所を教えてくれる"),
+            )
+
+def ep_yuna_home(w: World):
+    return w.episode("$yunaの居場所",
             w.plot_resolve("初めて訪れた$yunaの住まいは全てが揃った高級住宅だった"),
+            w.plot_note("それは$mumeが生まれた場所の、再開発地域に新しく建ったタワーマンションの一つだった"),
+            w.plot_note("$mumeはインタフォンで$yunaのことを確認して、そこに入る"),
+            w.plot_note("$yunaは$mumeを出迎えてくれたが、やつれていた"),
             )
 
 def ep_yuna_history(w: World):
@@ -344,6 +415,11 @@ def ch_main(w: World):
             ep_her_name(w),
             ep_losther(w),
             ep_selection(w),
+            ep_yuna_info(w),
+            ep_yuna_old_manager(w),
+            ep_yuna_mother(w),
+            ep_ishiwaki(w),
+            ep_yuna_home(w),
             ep_yuna_history(w),
             ep_hisname(w),
             )
