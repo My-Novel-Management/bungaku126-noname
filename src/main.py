@@ -72,7 +72,7 @@ def ep_share_house(w: World):
             w.plot_setup("$yunaは$ishiと付き合っている", about="yuna"),
             w.plot_note("$ishiは芸人をしているらしいが、あまり外出することもなく、ゲームばかりして暮らしている"),
             w.plot_note("パシリに使われる新しい彼女の$yuna"),
-            w.plot_note("前の彼女とは違い、あまり料理はしないタイプだと＄mumeは思った"),
+            w.plot_note("前の彼女とは違い、あまり料理はしないタイプだと$mumeは思った"),
             )
 
 def ep_want_famous(w: World):
@@ -403,8 +403,8 @@ def ch_main(w: World):
     return w.chapter('main',
             ep_annoymous_man(w),
             ep_share_house(w),
-            ep_nothing_any(w),
             ep_want_famous(w),
+            ep_nothing_any(w),
             ep_catch_her(w),
             ep_yuna_parting(w),
             ep_yuna_life(w),
