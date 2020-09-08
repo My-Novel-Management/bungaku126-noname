@@ -30,6 +30,8 @@ ASSET = {
             ("ItalianBar", "イタリアンバー", "Tokyo"),
             ("TenantBuilding", "雑居ビル", "Tokyo"),
             ("PaperCompany", "小さな会社", "Tokyo"),
+            ("SideWalk", "歩道", "Tokyo"),
+            ("BookShop", "本屋", "Tokyo"),
             ("Bar", "飲み屋", "Tokyo"),
             ("TowerManshion", "タワーマンション", "Tabata"),
             ("YunaHome", "有奈の部屋", "TowerManshion"),

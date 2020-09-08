@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-Stage: "stage name"
+Stage: "実家跡地"
 '''
 import os
 import sys
@@ -10,7 +10,13 @@ from storybuilder.builder.world import World
 
 
 ## scenes
-def scene_name(w: World):
-    return w.scene('__scene__',
+def nothing_place(w: World):
+    return w.scene('何もない場所',
+            w.plot_note("落ち込んだ時に$mumeはいつも自分の始まりの場所にやってくる"),
+            w.plot_note("$mumeの実家は既に整地され、タワーマンション建設予定地になっている"),
             )
 
+
+def proposed(w: World):
+    return w.scene("プロポーズ",
+            )

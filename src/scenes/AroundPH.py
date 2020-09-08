@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-Stage: "stage name"
+Stage: "実家跡地周辺"
 '''
 import os
 import sys
@@ -10,7 +10,10 @@ from storybuilder.builder.world import World
 
 
 ## scenes
-def scene_name(w: World):
-    return w.scene('__scene__',
+def redevelop_area(w: World):
+    return w.scene('再開発エリア',
+            w.plot_note("周囲も開発が進み、古い店舗はどんどん看板を下ろしていく"),
+            w.plot_note("人間だけでなく、街も有名なものたちに無名が虐げられていた"),
+            w.plot_note("おまけに財布には金が数百円しか残っていなかった"),
             )
 

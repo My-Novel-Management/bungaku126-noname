@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-Stage: "郵便局"
+Stage: "本屋"
 '''
 import os
 import sys
@@ -10,8 +10,7 @@ from storybuilder.builder.world import World
 
 
 ## scenes
-def my_name(w: World):
-    return w.scene('自分の名前',
-            w.plot_note("郵便局で番号を呼ばれ、記録郵便で小説を送る$mume"),
+def about_famous(w: World):
+    return w.scene('有名とは',
             )
 

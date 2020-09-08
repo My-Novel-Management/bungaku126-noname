@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-Stage: "stage name"
+Stage: "$yunaの部屋"
 '''
 import os
 import sys
@@ -10,7 +10,12 @@ from storybuilder.builder.world import World
 
 
 ## scenes
-def scene_name(w: World):
-    return w.scene('__scene__',
+def her_talk(w: World):
+    return w.scene('$yunaの話',
             )
 
+
+
+def her_backhistory(w: World):
+    return w.scene("$yunaの過去",
+            )
