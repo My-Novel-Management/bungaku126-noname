@@ -7,11 +7,12 @@ Story Config
 ASSET = {
         "PERSONS": (
             # (tag / name / full / age (birth) / job / call / info)
-            ('mume', '無門', '無門,健義', 30,(1,1), 'male', '無職', "me:私"),# 無門で「かどなし」と呼ぶ
-            ("yuna", "有奈", "冴喜,有奈", 30,(1,1), "female", "動画配信者", "me:わたし"),
+            ('mume', '無門', '無門,健義', 35,(1,1), 'male', '無職', "me:私"),# 無門で「かどなし」と呼ぶ
+            ("yuna", "有奈", "冴喜,有奈", 28,(1,1), "female", "動画配信者", "me:わたし"),
             ("ishi", "石脇", "石脇,和優", 35,(1,1), "male", "芸人", "me:俺"),
             ("hashi", "橋本", "", 40,(1,1), "male", "記者", "me:俺:k_me:私"),
             ("mutsu", "睦美", "奈良,睦美", 30,(1,1), "female", "イラストレータ", "me:うち"),
+            ("akai", "赤井", "赤井,圭助", 34,(1,1), "male", "小説家", "me:俺"),
             ),
         "STAGES": (
             # (tag / name / parent / (geometry) / info)
@@ -50,6 +51,7 @@ ASSET = {
             ("theblog", "かつて有名だった私へ"),
             ("line", "ＬＩＮＥ"),
             ("pc", "ＰＣ"),
+            ("ATM", "ＡＴＭ"),
             ),
         "RUBIS": (
             # (origin / rubi / exclusions / always)
