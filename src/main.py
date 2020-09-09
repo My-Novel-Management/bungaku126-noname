@@ -87,6 +87,7 @@ def ep_share_house(w: World):
             w.plot_setup("$mumeはシェアハウスで$ishiと暮らしていた"),
             "シェアハウス：住人",
             House.resident(w),
+            Living.introduction_house(w),
             w.plot_setup("$ishiは芸人で新しい彼女$yunaをよく連れ込んでいた"),
             w.plot_setup("$yunaは$ishiと付き合っている", about="yuna"),
             "シェアハウス：$ishiの彼女",

@@ -18,7 +18,7 @@ ASSET = {
             # (tag / name / parent / (geometry) / info)
             ("Tabata", "田端", "Tokyo"),
             ("Station", "田端駅", "Tabata"),
-            ("House", "シェアハウス", "Tabata"),
+            ("House", "名無荘", "Tabata"),
             ("MumeRoom", "無名の部屋", "House"),
             ("IshiRoom", "石脇の部屋", "House"),
             ("Living", "共用スペース", "House"),
