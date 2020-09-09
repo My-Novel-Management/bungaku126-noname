@@ -12,7 +12,24 @@ from storybuilder.assets import basic
 from storybuilder.assets import common_rubi
 from config import ASSET
 # import scenes
-# from scenes import xxx
+from scenes import AroundPH
+from scenes import Bar
+from scenes import BookShop
+from scenes import Cafe
+from scenes import Cafe
+from scenes import Famires
+from scenes import House
+from scenes import IshiRoom
+from scenes import ItalianBar
+from scenes import Living
+from scenes import MumeRoom
+from scenes import PaperCompany
+from scenes import ParentHouse
+from scenes import PostOffice
+from scenes import SideWalk
+from scenes import TenantBuilding
+from scenes import TowerManshion
+from scenes import YunaHome
 
 
 ################################################################
@@ -31,7 +48,7 @@ from config import ASSET
 
 # Constant
 TITLE = "無名"
-MAJOR, MINOR, MICRO = 0, 5, 0
+MAJOR, MINOR, MICRO = 0, 6, 0
 COPY = "名前に振り回された人生でした"
 ONELINE = "約３万字の文学短編。有名になりたい男と無名になりたい女の人生が、交錯する"
 OUTLINE = "有名になりたい男は試行錯誤するけれど、その間にも同居するその界隈で有名な女は更に有名になり、無名になりたいと願う。二人は人生の交換を申し出た"
@@ -44,271 +61,269 @@ CAUTION = ""
 NOTE = ""
 SITES = ["エブリスタ", "小説家になろう", "ノベルアッププラス", "カクヨム"]
 TAGS = ["文学",]
-RELEASED = (1, 1, 2020)
+RELEASED = (8, 31, 2020)
 
 
 # Episodes
-def ep_anonymous(w: World):
-    return w.episode("無名",
-            "構成上はここの内容の大部分が「状況説明」「前提説明」なので入れるかどうかは微妙なライン",
-            "名前について、もっと何かしら執着しているようなエピソード群にするように",
-            w.plot_setup("無名の男がいた"),
-            w.plot_note("$mumeはネットで「$theblog」を発見し、それを読んでいた"),
-            w.plot_note("有名になりたいと思っている$Sに対して、そのブログは有名になっても酷いことばかりで人生が崩壊したと書いてあった"),
-            w.plot_note("でもそれは有名になったその人物がうまくやれなかっただけだとしか思えなかった"),
-            w.plot_note("$mumeは応募していた漫才のプロットコンペの結果が出ているのを見て、自分の名前がないことに落胆する"),
-            w.plot_setup("$mumeは色々なことをして有名になろうとしていたが、全て失敗していた"),
-            w.plot_note("他にも出していたものを思い出してそれらを調べてみたが、結果が出ているもの、途中経過が出ているもの、どこにも彼の名はなかった"),
-            w.plot_note("パソコンで画面に「無名」と書く"),
-            w.plot_note("それから名前というものについて今一度考え始める"),
-            w.plot_note("有名とは何なのか、無名ではいけないのか"),
-            w.plot_note("空腹と貧乏が、そんな考えを駆逐していく"),
-            w.plot_note("作家だけじゃない、音楽も、絵も、ゲームやシナリオ、果ては動画制作まで、",
-                "いろいろとチャレンジしたが全く芽が出なかった"),
-            w.plot_setup("作家になろうと挑戦していた", about="mume"),
-            w.plot_note("改めて$theblogを振り返る"),
-            w.plot_note("そこにはかつて芸能界で有名になったが、それ故に周囲の人間が狂い、自分の世界が壊れていったことが書かれていた"),
-            w.plot_note("コメントはほとんどスパムで、あっても誹謗中傷や嫉妬、多少の共感しかなかった"),
-            w.plot_note("$mumeはたとえそういう状況になったとしても、そんな人間は切り捨てればいいだけで、",
-                "やはり現代で有名というのは強いと考えていた"),
-            w.plot_note("ネットを漁れば沢山の有名人が出てくる"),
-            w.plot_note("テレビじゃなくてもその界隈の有名人がいて、彼ら彼女らは自分のコミュニティを築いてその春を謳歌していた"),
-            w.plot_note("流れてきたつぶやきには「現代は誰もがメディアであり、発信能力、拡散能力の強いメディア強者になれる」と書かれ、それが沢山リツイートされていた"),
-            w.plot_note("日々「人気」が生み出されている"),
-            w.plot_note("その中には「炎上」もあったが、炎上商法として目立てばとにかく何でもいい、というやり方すら存在していた"),
-            w.plot_note("$mumeは現在は作家に挑戦していたが、公募もネットでもぱっとせず、苦悩していた"),
-            w.plot_setup("$mumeはシェアハウスに暮らしていた。他の居住者は$ishiだった"),
-            w.plot_note("$ishiは芸人をしていて、ほとんど$mumeとは交流がなかったが、",
-                "時折ネタの相談にきたり、知りたいことを聞きに来たり、といった程度の関係はあった"),
-            w.plot_note("小説を書こうと集中していると、酔っ払って大声で帰ってきた$ishi"),
-            w.plot_note("$ishiは彼女（$yuna）を連れていた。新しい彼女だ"),
-            w.plot_note("$yunaは$ishiを介抱しつつ、物がなくて$mumeに借りに来る"),
-            w.plot_note("$mumeは$yunaに自己紹介をされた"),
-            "ここで名前を教えているが、小説本文には書かない",
-            w.plot_setup("$mumeは付き合っていた彼女($mutsu)に愛想をつかされ、失恋した"),
-            w.plot_note("$mumeには付き合っている彼女（$mitsu）がいた"),
-            w.plot_note("$mitsuはイラストレーターでプロを目指して日々がんばっている"),
-            w.plot_note("$mutsuが応募していたイラストコンテストで入賞した、と彼女は大喜びしていたが、$mumeは素直に喜べなかった"),
-            w.plot_note("$mitsuがずっとがんばってきたのを傍で見てきたが、彼女だけ先に行ってしまったようで取り残された気分になった"),
-            w.plot_note("$mitsuが公募とは別件で少しお金が入ったから久々に一緒に外で食べないかと誘ったが、",
-                "$mumeは「君のお金だから君自身のために使いなさい」と言ってしまう"),
-            w.plot_note("それをきっかけに徐々に距離を離れ、やがて$mutsuから一方的に別れると$lineがきて、関係が終わった"),
-            "いつも必要以上に追いかけない$mumeは、チャンスを逃してしまう",
-            "あと一歩、を出さない。ここも彼女に声をかけていれば、理由をきいていれば、復縁はあったかも知れない",
-            w.plot_note("たまに仕事で気持ちよくなって飲んで帰ってきた時、$mumeにお土産をくれたりした（自慢話つき）"),
-            w.plot_note("$mumeは相手の話をなんだかんだ意見せずに聞いてしまうので、そのあたりは人として$ishiは気に入っていた"),
-            w.plot_setup("$mumeは$mitsuと別れた"),
-            w.plot_setup("$ishiは$yunaとほぼ半同棲生活になっていく", about="yuna"),
-            w.plot_note("$mumeは最近よく$yunaと顔を合わせると思っていた"),
-            w.plot_note("共用のキッチンで$mumeは$yunaと一緒に料理をする"),
-            w.plot_note("$yunaは$ishiが芸人としてがんばっているのは知っているが、別に今のままでいいと言う"),
-            w.plot_note("数日後、$mumeが家に戻ってくると家の前で$yunaが泣きはらして座っていた"),
-            w.plot_turnpoint("$yunaは$ishiにふられてしまう", about="yuna"),
-            w.plot_turnpoint("$mumeは家の前で泣きつかれていた$yunaを拾った"),
-            w.plot_note("事情を聞くと、どうやら$ishiに新しい彼女ができて、今はそっちの彼女の家に泊まり込んでいるらしい"),
-            "ここでどうなしくずして同棲のようになっていくか",
+def ep_annoymous_man(w: World):
+    return w.episode("無名な男",
+            "主人公の名前は最後まで書かないこと",
+            "自動的に「一人称」作品となる",
+            w.plot_setup("$mumeは名前を呼ばれない、無名の男だった"),
+            "郵便局：自分の名前",
+            PostOffice.my_name(w),
+            w.plot_setup("$mumeはイラストレーター志望の$mutsuと付き合っていた"),
+            "歩道：彼女の連絡",
+            SideWalk.her_contact(w),
+            "本屋：有名とは",
+            BookShop.about_famous(w),
+            w.plot_setup("$mumeは$mutsuとよく「有名」について討論した"),
+            "ファミレス：彼女",
+            Famires.girlfriend(w),
             )
 
-def ep_alternate(w: World):
-    return w.episode("代替",
-            w.plot_develop("$mumeは出ていった$ishiが帰ってくるまでシェアハウスで暮せばいいと提案する"),
-            w.plot_note("$yunaは一緒に住むつもりで契約解除手続き中だった"),
-            w.plot_note("でも彼とは連絡がつかず、結局新しいところを探すしかないと苦笑する"),
-            w.plot_note("$mumeはオーナーが少し変わっているが、しばらくなら住んでも大丈夫じゃないかと提案する"),
-            w.plot_note("ひとまずちゃんと二人で話した方がいいと説得した"),
-            w.plot_note("$yunaは翌日、荷物を運び込み、シェアハウスで暮らし始めた"),
-            w.plot_develop("$mumeと$yunaの同棲のような生活が始まる"),
-            w.plot_note("$yunaは見た目の割には不器用で料理も下手で掃除や洗濯も苦手といった現代的な女子だった"),
-            w.plot_note("$mumeは仕方なく、彼女の為に食事くらいは作ってやるようになる"),
-            w.plot_note("$yunaは$mumeが挑戦しようとしている分野に限らず、有名人のことを全然知らなかった"),
-            w.plot_note("時折知っている芸能人もいたが、昔有名になった程度の、いわゆる「過去の人」で、",
-                "テレビは持っていないし、新聞なんかも読まないらしい"),
-            w.plot_note("$mumeは彼女にとって「有名人」て誰なのかと思う"),
-            w.plot_note("$yunaは有名人なんて単なる幻想で、誰もが知っている、なんて人は存在しないと断言した"),
-            w.plot_develop("$yunaは自発性がなく、一日ぼーっとしていた"),
-            w.plot_note("$mumeはウェブを通じて小さな記事を書いてなんとか生計を立てている"),
-            w.plot_note("ある日、若い女性へのアンケート的内容のものがあり、$yunaを観察してみた"),
-            w.plot_note("彼女の一日は大半をぼーっとして過ごしている"),
-            w.plot_note("ネットを見て、動画を見て、買い物に出かけるけれど大して買わなかったりして"),
-            w.plot_note("何もないような日々こそが、彼女の日常だった"),
-            w.plot_note("流石に$mumeは見かねて、何か趣味がないのか尋ねる"),
-            w.plot_develop("掃除していて$ishiが楽しそうにやっていた人殺しのゲームをやってみるが、恐くて一人ではできなかった", about="yuna"),
-            w.plot_note("$yunaは$mumeにゲームの遊び方を教えて欲しいと頼む"),
-            w.plot_note("$yunaと$ishiはいつも部屋に一緒にいるとき、彼がゲームするのを見ていたらしい"),
-            w.plot_note("しかし準備してゲームを始めると、もっと違うことをしていたと言う"),
-            w.plot_note("どうやら実況をしていたらしいと分かり、$mumeは$yunaに実況配信を説明する"),
-            w.plot_note("全然知らない人と一緒にゲームできるのは楽しいといい、やりたいと言い出す$yuna"),
-            w.plot_note("危険性も説明した上で、顔は出さない、声はソフトで変えてやると説明した"),
-            w.plot_turnpoint("$yunaは$ishiがやっていたゲーム実況をしてみたいと言うので、$mumeが準備をして配信方法を教えてやった"),
-            w.plot_develop("$yunaはゲーム実況配信をし始める"),
-            w.plot_note("ゲーム実況を始める$yuna"),
-            w.plot_note("最初は傍で$mumeが見てやり、何か困ったことがあったら助け舟を出していたが、"),
-            w.plot_note("彼女の物覚えはよく（それは普段料理も掃除もできない彼女から想像できない）、一人で色々とやれるようになった"),
-            w.plot_note("$yunaは視聴者とのやり取りが面白く、どんどん人気が高まっていく"),
-            "この間に$mumeの方でも何かしらイベントを進めておく",
-            w.plot_develop("$yunaは人気実況者になった"),
-            w.plot_note("しばらく集中して公募向け小説を書いていて、一段落ついたところで$yunaの調子を覗きに行く"),
-            w.plot_note("彼女の配信のコメント欄は盛況だった"),
-            w.plot_note("固定ファンもかなり多く、投げ銭をしてくれるファンもいた"),
-            w.plot_note("$yunaが言うには自分としては普通にゲームをして楽しんでいるだけなのに、見ている人も楽しいみたいだと"),
-            w.plot_note("彼女のやり取りを観察する"),
-            w.plot_note("特にこびたり、大げさに驚いたりせず、ごく普通の女性がゲームをしているだけだった"),
-            w.plot_note("ゲームは初心者といってもよく、ホラーゲームをやればすぐに死ぬし、アクションは進まない"),
-            w.plot_note("それでも本人がゲーム体験が少なく、純粋に楽しんでいる様が受けているらしかった"),
-            w.plot_develop("$mumeも彼女を真似て実況配信してみたが、全然人気は出なかった"),
-            w.plot_note("$mumeもかつて使っていたアカウントで実況配信をしてみる"),
-            w.plot_note("しかしゲームをそつなくこなし、特にしゃべることもなく、視聴者もすぐに離れていってしまう"),
-            w.plot_note("女性と偽ればいいのかと考え、女性キャラを画面に出して、ボイスチェンジャーで喋ってみる"),
-            w.plot_note("それは最初こそ客がきたが、何も惹かれないようで、やはりすぐに離れていってしまった"),
-            w.plot_note("自分は向いていないのだと$mumeは悟る"),
-            w.plot_turnpoint("コメントでリアルの$yunaを知ってそうな人が現れて恐くなった", about="yuna"),
-            w.plot_note("ある日、$yunaが「こわい」と言い始めた"),
-            w.plot_note("どうやら彼女の私生活を知っているっぽい人がコメントに現れたというのだ"),
-            w.plot_note("彼女はしばらく実況者をやめる"),
-            w.plot_turnpoint("$mumeは$yunaと実況の中の人を交代し、人気実況者としての生活を始めることになった"),
-            w.plot_note("$mumeは調査するために$yunaになりかわり、実況をしてみる"),
-            w.plot_note("しかしそこには彼女が言うような人間は現れなかった"),
+def ep_share_house(w: World):
+    return w.episode("シェアハウス",
+            w.plot_setup("$mumeはシェアハウスで$ishiと暮らしていた"),
+            "シェアハウス：住人",
+            House.resident(w),
+            w.plot_setup("$ishiは芸人で新しい彼女$yunaをよく連れ込んでいた"),
+            w.plot_setup("$yunaは$ishiと付き合っている", about="yuna"),
+            "シェアハウス：$ishiの彼女",
+            House.ishi_girlfriend(w),
             )
 
-def ep_famous(w: World):
-    return w.episode("有名",
-            w.plot_develop("$mumeは人気の彼女になりきろうと必死に彼女のことを勉強する"),
-            w.plot_note("数日$yunaに成り代わってみたが、視聴者はどうも中身が変わったことに気づかないようだった"),
-            w.plot_note("評判も悪くなく、また$yunaよりもコメントいじりが増えているからか、いつもより楽しそうに見えた"),
-            w.plot_note("$mumeは本気で$yunaの代役に取り組んでみることにした"),
-            w.plot_note("$mumeはいつも対象のことをよく調べて勉強する"),
-            w.plot_note("$mumeは$yunaに取材依頼をした"),
-            w.plot_develop("$yunaはあまり過去について話したがらなかった"),
-            w.plot_note("$mumeは$yunaを前にして、聞きたいことのメモを読み上げながら質問をしていく"),
-            w.plot_note("$yunaはあまり答えてくれない"),
-            w.plot_note("特に小さい頃のこと、両親のことについては答えたがらなかった"),
-            w.plot_note("ただ、普段の生活についてとか、好きなこと、嫌いなことなど、簡単な質問はいくらでも答えてくれた"),
-            w.plot_note("その中で、勉強は苦手だったが英語は少し話せることを知る"),
-            w.plot_note("話は$ishiとのことに及び、彼女は本音を語ってくれた"),
-            w.plot_develop("$yunaは$ishiとのことを$mumeに話す"),
-            w.plot_note("$yunaは帰国してアテのない日々を送っていた"),
-            w.plot_note("過去に話せないことが色々とあり、精神を消耗していた$yunaは、他人に対して警戒心が強く、",
-                "なかなか心を許して話せる相手に巡り会えなかった"),
-            w.plot_note("恋愛関係になりそうだった男性とは疑心暗鬼になり、結果、ふるような形で別れてしまった"),
-            w.plot_note("飲み屋で一人いたところに、$ishiたちの集団がやってきた"),
-            w.plot_note("最初に声をかけてきたのは$ishiとは別の、既に酔っ払っていたある有名芸人だった"),
-            w.plot_note("$yunaはその人を知らず、彼は「俺は○○だぞ」と言って強引にナンパしようとしてきた"),
-            w.plot_note("そこを助けてくれたのが$ishiだった"),
-            w.plot_note("それをきっかけに$ishiと付き合うようになる"),
-            w.plot_note("$ishiもまた芸人で、名を売ることを目指していた"),
-            w.plot_note("人の良いところもあるが、功名心が強く、ほいほいと権力におもねるところがあった"),
-            w.plot_note("新しい彼女は有名プロダクションの副社長の孫娘らしい"),
-            w.plot_note("グラビアをやっているが無名で、それでも次々とツテで仕事があるらしい"),
-            w.plot_note("そのグラビア女性と話題になって名前を売りたいと言っていた。そこに愛はないらしい"),
-            w.plot_note("お酒が入り、$yunaはいっぱい$ishiのことを愚痴り、眠ってしまった"),
-            w.plot_develop("$yunaと取材デートをした"),
-            w.plot_note("$yunaがいつも$ishiとデートしていたのは部屋から飲み屋で、他の彼氏ともデートスポットに出かけたりすることはなかったらしい"),
-            w.plot_note("$yunaは$mumeにごく普通のデートをしてみたいとリクエストする"),
-            w.plot_note("$mumeはいつも$mutsu任せだったので、困惑して、彼女に連絡を取った"),
-            w.plot_note("$mutsuは正式に仕事が決まりそうな忙しさの中でも、何故か会ってくれた"),
-            w.plot_note("久しぶりに会った$mutsuは$mumeがあまりにも変わってなくて落胆していた"),
-            w.plot_note("$mutsuはいつまでも$mumeが結果を出せないのは何もかも中途半端だからと言い切る"),
-            w.plot_note("取材するのはいいけれど、そこに$mumeのオリジナルが、それこそ「名前」がないのだと言う"),
-            w.plot_note("プロになるのに必要なのは技術以上にそういった自分らしさなんじゃないかと"),
-            w.plot_note("結局デートプランは紹介してもらえず、精神にダメージを負っただけだった"),
-            w.plot_note("$mumeは雑誌やサイトを見て、なんとかデートプランを立てる"),
-            w.plot_note("あまり外に出るのは好きじゃないという$mumeと共に映画を見て、",
-                "喫茶店で軽食をとり、本屋やゲームショップを回った"),
-            w.plot_note("途中で外国人旅行客が困っていたが$mumeはつたない英語で対応しようとする"),
-            w.plot_note("$yunaは簡単な英語なら話せると、事情を聞き出して、教えてあげた"),
-            w.plot_note("家に帰り、$mumeは$yunaが自分が見立てた人間像とはかけ離れていたことに愕然とし、才能のなさを嘆く"),
-            w.plot_develop("$mumeは$yunaがゲームプレイしているのと並行して、話す方だけ担当することから始めた"),
-            w.plot_note("ゲーププレイは$yunaはあまり上手くなかったので、その癖を勉強しつつ、",
-                "実況部分だけ$mumeが担当した"),
-            w.plot_note("その間も$mumeは彼女に聞いたことなどを活かして小説を書いていたが、",
-                "書き進めるほどに自信を失っていった"),
-            w.plot_develop("徐々に$mumeは$yunaになりかわっていく"),
-            w.plot_note("実況配信は相変わらず$mumeが続けていたが、問題なく、人気も上向きになっていた"),
-            w.plot_note("それと並行して$mumeは小説を書いていた"),
-            w.plot_note("$yunaとの付き合いの中での気づきから「自分らしい」小説を目指して書いていた"),
-            w.plot_develop("ストーカー気質なコメントをする人物を炙り出そうと考える"),
-            w.plot_develop("$ishiから連絡が入る", about="yuna"),
-            w.plot_develop("$ishiと久しぶりにデートする、と$mumeに報告する", about="yuna"),
-            w.plot_note("ある日、$yunaに$ishiから連絡が入る"),
-            w.plot_note("$yunaは久しぶりに$ishiと出会えるので楽しそうだった"),
-            w.plot_develop("$ishiには既に別の女がいると知る（その女からの連絡）", about="yuna"),
-            w.plot_note("$yunaがデートに出かけた日、放送はいつもと変わらない感じに見えたが、何か妙だった"),
-            w.plot_develop("彼女は更に人気となる"),
-            w.plot_note("そんな中、番組プロデューサーと名乗る人物から連絡が入る"),
-            w.plot_note("ゲーム実況の番組に出場してくれないか、というのだ"),
-            w.plot_note("何人か声をかけていて、企画が好評なら正式にウェブ番組にしたいらしい"),
-            w.plot_note("昨今のイースポーツの賑わいもあり、調べたところではそういう方面に乗り出している企画運営会社らしかった"),
-            w.plot_develop("男は彼女の中の人として人気になる"),
-            w.plot_note("$mumeは$yunaに相談する"),
-            w.plot_note("しかしどこからかその話が漏れ、出場を辞退したことがバレると、何故か中の人物が男なのだと噂が立った"),
-            w.plot_note("徐々に酷いコメントが目につくようになる"),
-            w.plot_turnpoint("中の人が男だとばれる"),
-            w.plot_note("ある日、誰も知るはずのない実況中の隠し撮り映像が流出した"),
-            w.plot_note("それは$yunaのスマートフォンに残されていたものだと分かった"),
+def ep_want_famous(w: World):
+    return w.episode("有名になりたい",
+            w.plot_setup("$mumeは色々とやって売れることを目指していた"),
+            "自室：$mumeの夢",
+            MumeRoom.his_dream(w),
+            w.plot_setup("人気になりつつある$mutsu"),
+            "自室：$mutsuの人気",
+            MumeRoom.popular_mutsu(w),
+            w.plot_setup("$mumeはブログ「$theblog」を読んで、それでも有名に憧れを抱いていた"),
+            "自室：あるブログ",
+            MumeRoom.this_blog(w),
+            w.plot_setup("$mutsuが公募に通り、プロの道が開ける"),
+            "喫茶店：仕事とビッグニュース",
+            Cafe.bignews(w),
+            w.plot_setup("$mumeは$mutsuから別れると連絡を受ける"),
+            "自室：$mutsuとの別れ",
+            MumeRoom.depart_mutsu(w),
             )
 
-def ep_lostname(w: World):
-    return w.episode('喪失',
-            w.plot_resolve("炎上し、彼女のアカウントだけでなく、男のアカウントも全て削除する"),
-            w.plot_note("全てのネットの痕跡を削除したはずなのに、$lineにメッセージがどんどんやってくる"),
-            w.plot_note("自分の本名は誰も特定していない。彼女の本名だけが書き連ねられている"),
-            w.plot_note("携帯電話も解約し、ネット世界の存在を全て削除した"),
-            w.plot_note("自分が書いてきた小説、作った音楽、あまり上手くならなかった絵、",
-                "それらの全てがデジタルで、ネットに上げていたそれらは全てゼロになった"),
-            w.plot_note("名前だけではなく、自分が生み出したものもゼロになった"),
-            w.plot_note("その流れが$theblogの主の騒動を思い起こさせた"),
-            w.plot_note("主は最後に死をほのめかして、それ以降更新はされていない"),
-            w.plot_note("そのブログサービスが終了することが決まり、彼女のブログも消滅することが分かった"),
-            w.plot_resolve("公募に出していた小説の一次落選を知る", about="mume"),
-            w.plot_note("公募の一次発表の時期と思い出して、ネットカフェで確認すると、落選していた"),
-            w.plot_note("$mumeは引っ越しを決意する"),
-            w.plot_resolve("ネットストーカーの犯人は元彼氏だった", about="yuna"),
-            w.plot_note("$yunaが部屋の契約をどうするのか$ishiに相談に行くと、彼は彼女に捨てられ、すがりついてきた"),
-            w.plot_note("けれど$yunaは人気にすりよって固執している$ishiが、炎上しているけど有名になってしまった自分の名前に執着しているだけだと見抜き、別れを選択する"),
-            w.plot_resolve("元彼氏は彼女の人気に激しく嫉妬していた", about="yuna"),
-            w.plot_note("$mumeは全てを失い、自分の才能にも絶望し、名前も失った"),
-            w.plot_note("$mumeは$yunaに今後どうするのかと尋ねる"),
-            w.plot_resolve("何もなくても一緒にいたいと思った$yunaは彼の名を呼びプロポーズをした", about="yuna"),
-            w.plot_note("全てを失い、名前だけでなく、何もかもが無になった$mume"),
-            w.plot_note("住む場所も失って、途方にくれていたところに、$yunaが現れる"),
-            w.plot_note("$yunaは$mumeに色々と助けてもらったから、今困っているあなたを助けたいと申し出る"),
-            w.plot_note("自分には何もない。何の価値もない。そう反論する$mume"),
-            w.plot_note("$yunaは「わたしが欲しかったのは無名」と答えた"),
-            w.plot_note("$yunaが$theblogの作者だった",
-                "あの作者は生きていたのだ"),
-            w.plot_note("$yunaは初めてそこで彼女の半生を語った"),
-            w.plot_note("親が芸能関係者だった"),
-            w.plot_note("子役として他の子よりも大人たちの望む通りにできただけ"),
-            w.plot_note("でもそのちょっとしたことが、人生を狂わせた"),
-            w.plot_note("逃げるように留学し、自分の名前が消えた頃に日本へと戻ってきた"),
-            w.plot_note("$yunaは名前があること、有名なことから、逃げたかった"),
-            w.plot_note("$yunaは$mumeの良さを話す"),
-            w.plot_note("$yunaは$mumeの不器用だけどそこにある優しさと弱さが愛おしくなり、自分に大切な人間が誰なのか気づいた"),
-            w.plot_note("それでも$mumeは有名になりたのか、と彼女は尋ねる"),
-            w.plot_resolve("$mumeは彼女にプロポーズされ、そこで初めて自分の名を呼ばれた"),
-            w.plot_note("$mumeは$yunaにプロポーズされる"),
-            w.plot_note("けれどどん底で自分に自信なんて持てず、$yunaに比べて何も全然成していない、更に経済的にもどうしようもない状況で、",
-                "彼女のプロポーズは受けられないと断る"),
-            w.plot_note("だが彼女は名のない、無名の、それでも相手のことを思いやり、優しさがあり、真面目で、必死にもがいて、そんな姿が愛しいという"),
-            w.plot_note("それでも有名になりたいなら、また自分の名前を借りればいいとすら言う"),
-            w.plot_note("名前って何なんだろう、とそこに至って考える"),
-            w.plot_note("$theblogには本当は続きがあったらしい"),
-            w.plot_note("一番欲しかったものは有名ではなく、無名でもいいから何気ない日常のささやかな幸せだ"),
-            w.plot_note("大切な人と美味しいものを分け合い、ちょっとしたことで笑って、"),
-            w.plot_note("それは二人でシェアハウスをして暮らした日常だった"),
-            w.plot_note("すでに$yunaは$mumeとの生活の中で得ていたのだ、その「一番欲しかったもの」を"),
-            w.plot_note("$yunaは無名の名前を呼ぶ"),
-            w.plot_note("それこそが、$mumeが一番求めていたものだった"),
-            "有名になりたいという思いは昇華されたのか？",
+def ep_nothing_any(w: World):
+    return w.episode("何もない男",
+            w.plot_setup("$mumeは再び大切なものを失った"),
+            "自室：無駄な時間",
+            MumeRoom.wasted_time(w),
+            w.plot_setup("$mumeはいつも「無」になってしまう"),
+            "実家跡地：何もない場所",
+            ParentHouse.nothing_place(w),
+            "跡地周辺：再開発地区",
+            AroundPH.redevelop_area(w),
+            )
+
+def ep_catch_her(w: World):
+    return w.episode("彼女を拾う",
+            w.plot_turnpoint("$ishiが$yunaを捨て、有名タレントと付き合い始める"),
+            w.plot_turnpoint("$ishiに捨てられる", about="yuna"),
+            "シェアハウス：帰らない$ishi",
+            House.nohome_ishi(w),
+            w.plot_turnpoint("$mumeは捨てられた$yunaを拾う"),
+            "シェアハウス：$yunaを助けた",
+            House.help_yuna(w),
+            )
+
+def ep_yuna_parting(w: World):
+    return w.episode("$yunaの別れ話",
+            w.plot_develop("$yunaと$ishiが別れた事情を聞く"),
+            "シェアハウス：$yunaと話す",
+            House.talk_with_yuna(w),
+            w.plot_develop("$mumeは$ishiの気持ちも分からないではなかった"),
+            "シェアハウス：$yunaと$ishi",
+            House.yuna_and_ishi(w),
+            w.plot_develop("$mumeは口論の内容を聞く"),
+            w.plot_develop("$ishiが戻ってくるまでこの部屋を使えばいいと提案した"),
+            "シェアハウス：$mumeの提案",
+            House.mume_suggestion(w),
+            )
+
+def ep_yuna_life(w: World):
+    return w.episode("$yunaの暮らし",
+            w.plot_develop("$yunaと$mumeはシェアハウスで暮らし始める"),
+            "シェアハウス：$yunaの何もない一日",
+            House.yunas_nothing_day(w),
+            )
+
+def ep_streamer(w: World):
+    return w.episode("ゲーム実況者",
+            w.plot_develop("$mumeは$yunaにゲーム実況配信のやり方を教えた"),
+            "石脇の部屋：$yunaとゲーム",
+            IshiRoom.yuna_and_game(w),
+            w.plot_develop("$yunaはゲーム配信を始める"),
+            "石脇の部屋：$yunaと配信",
+            IshiRoom.yunas_streaming(w),
+            w.plot_develop("$yunaはゲームを楽しむようになり、日々に笑顔が戻る"),
+            )
+
+def ep_dontwork_mume(w: World):
+    return w.episode("うまくいかない$mume",
+            w.plot_develop("$mumeは小説の才能がないと言われる"),
+            "自室：小説を書く",
+            MumeRoom.writing_novels(w),
+            "喫茶店：才能がない",
+            Cafe.nohas_talent(w),
+            )
+
+def ep_popular_streamer(w: World):
+    return w.episode("人気実況者",
+            w.plot_develop("$yunaは人気実況者となる"),
+            "石脇の部屋：人気配信者",
+            IshiRoom.famous_streamer(w),
+            w.plot_develop("$mumeは実況で人気になることについて考えた"),
+            "自室：実況配信の研究",
+            MumeRoom.researching_streamer(w),
+            )
+
+def ep_lose_days(w: World):
+    return w.episode("失敗の日々",
+            w.plot_develop("一方$mumeは相変わらず成功から遠ざかっていた"),
+            "自室：not found",
+            MumeRoom.notfound_myname(w),
+            w.plot_develop("$mumeは公募に出していた小説が次々落選する"),
+            "自室：SNSの言葉",
+            MumeRoom.sns_words(w),
+            w.plot_develop("$mumeは小説を諦めた"),
+            "自室：デリート",
+            MumeRoom.deleting_novels(w),
+            )
+
+def ep_her_name(w: World):
+    return w.episode("彼女の名前",
+            w.plot_develop("ある日、$yunaから実況のコメントに恐い人が出ると相談される"),
+            "シェアハウス：$yunaの相談",
+            House.yuna_need_advice(w),
+            w.plot_turnpoint("$yunaがかつて有名子役だったことがバレる"),
+            )
+
+def ep_losther(w: World):
+    return w.episode("$yunaの失踪",
+            w.plot_develop("$yunaはシェアハウスに戻ってこなくなった"),
+            "シェアハウス：姿を消す彼女",
+            House.vanishing_yuna(w),
+            w.plot_develop("シェアハウスのオーナーから$ishiから入金がないが知らないかと連絡がある"),
+            w.plot_turnpoint("$mumeに落選した公募の主催出版社の編集から一度会いませんかと連絡がある"),
+            "自室：出版社からの連絡",
+            MumeRoom.contact_from_publisher(w),
+            )
+
+def ep_selection(w: World):
+    return w.episode("$mumeの選択",
+            w.plot_develop("$mumeは出版社の人間から声をかけてもらい会う予定になっていた"),
+            "喫茶店：才能の提案",
+            Cafe.support_talent(w),
+            w.plot_turnpoint("$mumeは$yunaも同じ出版社からブログの書籍化の話を持ちかけられていたと知る"),
+            "自室：$yunaのブログ",
+            MumeRoom.yuna_blog(w),
+            w.plot_resolve("$mumeは触れようとしなかった彼女の過去と、過去の繋がりを調べる"),
+            "シェアハウス：$ishiの帰還",
+            House.comeback_ishi(w),
+            )
+
+def ep_yuna_info(w: World):
+    return w.episode("$yunaの情報",
+            w.plot_resolve("$yunaの過去について知る人間を巡って、彼女の居場所を探す"),
+            "イタリアンバー：$yunaのことを",
+            ItalianBar.about_yuna_inbar(w),
+            )
+
+def ep_yuna_old_manager(w: World):
+    return w.episode("$yunaの元マネージャー",
+            w.plot_resolve("$yunaの元マネージャーに出会う"),
+            "元マネージャー会社：元マネージャーの話",
+            PaperCompany.talk_manager(w),
+            )
+
+def ep_yuna_mother(w: World):
+    return w.episode("$yunaの母親",
+            w.plot_resolve("$yunaの母親に出会う"),
+            "飲み屋：彼女の母親",
+            Bar.yuna_mother(w),
+            )
+
+def ep_ishiwaki(w: World):
+    return w.episode("$ishiの情報",
+            w.plot_resolve("$ishiから$yunaの居場所を教わる"),
+            "シェアハウス：出ていく$ishi",
+            House.goout_ishi(w),
+            )
+
+def ep_yuna_home(w: World):
+    return w.episode("$yunaの居場所",
+            w.plot_resolve("初めて訪れた$yunaの住まいは全てが揃った高級住宅だった"),
+            "タワーマンション：彼女の居場所",
+            TowerManshion.yuna_place(w),
+            )
+
+def ep_yuna_history(w: World):
+    return w.episode("$yunaの人生",
+            w.plot_resolve("$yunaは$mumeに自分の子役時代のことを語る"),
+            "$yunaの部屋：彼女の話",
+            YunaHome.her_talk(w),
+            "同：$yunaの過去",
+            YunaHome.her_backhistory(w),
+            w.plot_resolve("両親が芸能関係者だったことから、物心ついた頃には既に片足を芸能界に突っ込んでいた"),
+            w.plot_resolve("赤ん坊でテレビデビューし、その後順調に子役として育つ"),
+            w.plot_resolve("連続テレビドラマで人気になり、子役として毎日テレビに出るという忙しさになる"),
+            w.plot_resolve("両親はプロデュース専業に鞍替えし、自分の事務所を設立し、グッズ販売なども手がけるようになった"),
+            w.plot_resolve("$yunaは普通の生活が送りたかったが小学校はまともに行けず、中学は通信教育だった"),
+            w.plot_resolve("芸能界を引退したまま復帰する気のない娘と、残った会社を巡り、両親が対立。離婚調停になった"),
+            w.plot_resolve("高校には入らず、カナダに留学をする"),
+            w.plot_resolve("日本に帰ってきたのは二十歳を過ぎてからで、その頃には街からかつての自分の名前は消えていた"),
+            )
+
+def ep_hisname(w: World):
+    return w.episode("$yunaは彼の名を呼んだ",
+            w.plot_resolve("有名というのは自分の人生を売り渡す行為だと$yunaは言う"),
+            w.plot_resolve("無名なのは人生がないのと同じじゃないかと$mumeは言う"),
+            w.plot_resolve("$yunaは$mumeの人生が無意味でも無駄でも空虚でもないと反論する"),
+            w.plot_resolve("$mumeは真面目で面倒見がよく、他人のことに色々と気付ける人間で"),
+            w.plot_resolve("$yunaは$mumeによって助けられた"),
+            w.plot_resolve("この世界には無名の人の方がずっと多く、そういう無名の人によって世界は支えられている"),
+            w.plot_resolve("日々の生活では名前じゃなく、人の繋がりによって支えられていると"),
+            w.plot_resolve("いつ折れてもおかしくなかった自分を支えたのは、$mumeだったと"),
+            w.plot_resolve("$yunaは$mumeにプロポーズする", about="yuna"),
+            "実家跡地：プロポーズ",
+            ParentHouse.proposed(w),
+            w.plot_resolve("$mumeは$yunaに「名前」を呼ばれた"),
+            w.plot_resolve("その時本当は「無名」じゃなかったと分かった"),
             )
 
 
 def ch_main(w: World):
     return w.chapter('main',
-            ep_anonymous(w),
-            ep_alternate(w),
-            ep_famous(w),
-            ep_lostname(w),
+            ep_annoymous_man(w),
+            ep_share_house(w),
+            ep_want_famous(w),
+            ep_nothing_any(w),
+            ep_catch_her(w),
+            ep_yuna_parting(w),
+            ep_yuna_life(w),
+            ep_streamer(w),
+            ep_dontwork_mume(w),
+            ep_popular_streamer(w),
+            ep_lose_days(w),
+            ep_her_name(w),
+            ep_losther(w),
+            ep_selection(w),
+            ep_yuna_info(w),
+            ep_yuna_old_manager(w),
+            ep_yuna_mother(w),
+            ep_ishiwaki(w),
+            ep_yuna_home(w),
+            ep_yuna_history(w),
+            ep_hisname(w),
             )
 
 
@@ -462,6 +477,8 @@ def stage_note(w: World):
             "割といい感じのオーナーだが、独り者でちょっと変わった部分もある",
             "高円寺あたりの場所で",
             "場所明記はしない？",
+            "田端は山手線で一番無名な駅らしい",
+            "イメージする場所は田端にする",
             )
 
 def about_materials(w: World):

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-Stage: "stage name"
+Stage: "本屋"
 '''
 import os
 import sys
@@ -10,7 +10,8 @@ from storybuilder.builder.world import World
 
 
 ## scenes
-def scene_name(w: World):
-    return w.scene('__scene__',
+def about_famous(w: World):
+    return w.scene('有名とは',
+            w.cmd.change_stage("BookShop"),
             )
 
