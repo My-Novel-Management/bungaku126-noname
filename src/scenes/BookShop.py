@@ -12,5 +12,6 @@ from storybuilder.builder.world import World
 ## scenes
 def about_famous(w: World):
     return w.scene('有名とは',
+            w.cmd.change_stage("BookShop"),
             )
 

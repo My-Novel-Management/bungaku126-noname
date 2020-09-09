@@ -12,6 +12,7 @@ from storybuilder.builder.world import World
 ## scenes
 def about_yuna_inbar(w: World):
     return w.scene('$yunaのことを聞く',
+            w.cmd.change_stage("ItalianBar"),
             w.plot_note("バーで$yunaのことを聞く"),
             w.plot_note("よく一人で飲みに来ていて、数日前にも一人できたと"),
             w.plot_note("居場所は知らないと言われた"),

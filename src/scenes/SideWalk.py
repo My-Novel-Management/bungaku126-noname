@@ -12,6 +12,7 @@ from storybuilder.builder.world import World
 ## scenes
 def her_contact(w: World):
     return w.scene('彼女の連絡',
+            w.cmd.change_stage("SideWalk"),
             w.plot_note("スマホにはこの半年ばかり付き合っている$mutsuから連絡"),
             )
 

@@ -12,10 +12,12 @@ from storybuilder.builder.world import World
 ## scenes
 def her_talk(w: World):
     return w.scene('$yunaの話',
+            w.cmd.change_stage("YunaHome"),
             )
 
 
 
 def her_backhistory(w: World):
     return w.scene("$yunaの過去",
+            w.cmd.change_stage("YunaHome"),
             )

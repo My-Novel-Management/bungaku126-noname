@@ -12,6 +12,7 @@ from storybuilder.builder.world import World
 ## scenes
 def talk_manager(w: World):
     return w.scene('元マネージャーの話',
+            w.cmd.change_stage("PaperCompany"),
             w.plot_note("彼女の元マネージャーはフリーペーパーを作っていた"),
             w.plot_note("街の小さな話題やちょっとした話題の人を掲載する"),
             w.plot_note("もう芸能界は懲り懲りだと言っていた"),

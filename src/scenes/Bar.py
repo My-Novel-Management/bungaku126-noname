@@ -12,6 +12,7 @@ from storybuilder.builder.world import World
 ## scenes
 def yuna_mother(w: World):
     return w.scene('彼女の母親',
+            w.cmd.change_stage("Bar"),
             w.plot_note("彼女の母親は飲み屋をやっていた"),
             w.plot_note("金を色々使い込んで、借金をして、なんとか店をやっていた"),
             w.plot_note("彼女とは全然似ていないようで、料理ができないとか似ている部分もあった"),
