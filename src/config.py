@@ -13,6 +13,7 @@ ASSET = {
             ("hashi", "橋本", "", 40,(1,1), "male", "記者", "me:俺:k_me:私"),
             ("mutsu", "睦美", "奈良,睦美", 30,(1,1), "female", "イラストレータ", "me:うち"),
             ("akai", "赤井", "赤井,圭助", 34,(1,1), "male", "小説家", "me:俺"),
+            ("taka", "高橋", "高橋,弘之", 30,(1,1), "male", "編集者", "me:オレ"),
             ),
         "STAGES": (
             # (tag / name / parent / (geometry) / info)
@@ -25,6 +26,7 @@ ASSET = {
             ("YunaHome", "有奈の家", "Tabata"),
             ("ParentHouse", "無名の実家", "Tabata"),
             ("Cafe", "喫茶店", "Tabata"),
+            ("Conveni", "コンビニ", "Tabata"),
             ("Famires", "ファミレス", "Tabata"),
             ("PostOffice", "郵便局", "Tabata"),
             ("AroundPH", "実家跡地周辺", "Tabata"),
@@ -39,7 +41,8 @@ ASSET = {
             ),
         "DAYS": (
             # (tag / name / month / day / year)
-            ("FirstMeet", "初対面の日", 9,30, 2020),
+            ("FirstMeet", "初対面の日", 8,31, 2020),
+            ("MeetingDay1", "打ち合わせ日１", 9,1, 2020),
             ),
         "TIMES": (
             # (tag / name / hour / minute)
