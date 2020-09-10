@@ -91,7 +91,7 @@ def ep_share_house(w: World):
             w.plot_setup("$ishiは芸人で新しい彼女$yunaをよく連れ込んでいた"),
             w.plot_setup("$yunaは$ishiと付き合っている", about="yuna"),
             "シェアハウス：$ishiの彼女",
-            House.ishi_girlfriend(w),
+            Living.ishi_girlfriend(w),
             )
 
 def ep_want_famous(w: World):

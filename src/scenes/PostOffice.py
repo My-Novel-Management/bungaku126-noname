@@ -17,6 +17,7 @@ def my_name(w: World):
             w.cmd.change_camera("mume"),
             w.cmd.change_stage("PostOffice"),
             w.cmd.change_time("afternoon"),
+            w.cmd.change_date("FirstMeet"),
             w.plot_note("郵便局で番号を呼ばれ、記録郵便で小説を送る$mume"),
             mume.be(),
             man.be("#郵便局員"),

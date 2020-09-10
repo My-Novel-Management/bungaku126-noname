@@ -14,6 +14,7 @@ def resident(w: World):
     mume = w.get("mume")
     return w.scene('シェアハウスの住人',
             w.cmd.change_stage("House"),
+            w.cmd.change_time("night"),
             w.plot_note("$mumeは家賃三万のシェアハウスで何とか暮らしていた"),
             w.plot_note("同じシェアハウスの住人の$ishiが、新しい彼女を連れて帰ってくる"),
             mume.come("帰ってくる$S"),
@@ -27,15 +28,6 @@ def resident(w: World):
             mume.do("まだ玄関の上の電灯はひび割れたまま"),
             )
 
-
-def ishi_girlfriend(w: World):
-    mume = w.get("mume")
-    return w.scene("$ishiの彼女",
-            w.cmd.change_stage("House"),
-            w.plot_note("$ishiは芸人をしているらしいが、あまり外出することもなく、ゲームばかりして暮らしている"),
-            w.plot_note("パシリに使われる新しい彼女の$yuna"),
-            w.plot_note("前の彼女とは違い、あまり料理はしないタイプだと$mumeは思った"),
-            )
 
 
 def nohome_ishi(w: World):

@@ -39,6 +39,7 @@ ASSET = {
             ),
         "DAYS": (
             # (tag / name / month / day / year)
+            ("FirstMeet", "初対面の日", 9,30, 2020),
             ),
         "TIMES": (
             # (tag / name / hour / minute)
@@ -52,6 +53,7 @@ ASSET = {
             ("line", "ＬＩＮＥ"),
             ("pc", "ＰＣ"),
             ("ATM", "ＡＴＭ"),
+            ("pv", "ＰＶ"),
             ),
         "RUBIS": (
             # (origin / rubi / exclusions / always)
