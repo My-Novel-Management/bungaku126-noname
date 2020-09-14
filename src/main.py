@@ -111,12 +111,12 @@ def ep_want_famous(w: World):
             "喫茶店：仕事とビッグニュース",
             Cafe.bignews(w),
             w.plot_setup("$mumeは$mutsuから別れると連絡を受ける"),
-            "自室：$mutsuとの別れ",
-            MumeRoom.depart_mutsu(w),
             )
 
 def ep_nothing_any(w: World):
     return w.episode("何もない男",
+            "自室：$mutsuとの別れ",
+            MumeRoom.depart_mutsu(w),
             w.plot_setup("$mumeは再び大切なものを失った"),
             "自室：無駄な時間",
             MumeRoom.wasted_time(w),

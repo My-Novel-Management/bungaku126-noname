@@ -45,6 +45,7 @@ def sub_work(w: World):
 
 def bignews(w: World):
     mume = w.get("mume")
+    taka = w.get("taka")
     return w.scene('$mutsuのビッグニュース',
             w.cmd.change_stage("Cafe"),
             w.plot_note("$mutsuから話したいことがあると連絡がある"),
@@ -52,6 +53,14 @@ def bignews(w: World):
             w.plot_note("ネットのコンテストで優秀賞に$mutsuの名前を見つける"),
             w.plot_note("おめでとうと送るが、内心ではどうして自分は駄目なのだろうとばかり"),
             w.plot_note("互いの時間がちぐはぐでなかなか出会えない"),
+            mume.be("仕事の打ち合わせにきている"),
+            taka.be("$Sは資料を見ながら「これでいきましょう」と"),
+            taka.talk("そういえばご存知ですよね、$mutsuさん",
+                "うちではないんですけど、今度ゲームのデザインするそうですね"),
+            mume.talk("え？"),
+            mume.do("寝耳に水な情報に戸惑う"),
+            taka.talk("なかなか可愛い絵でうちでも使えたらって思ってたんですけど、売れちゃうと厳しくなっちゃうなあ"),
+            # TODO
             )
 
 
