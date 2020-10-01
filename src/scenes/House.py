@@ -11,23 +11,27 @@ from storybuilder.builder.world import World
 
 ## scenes
 def resident(w: World):
+    mume = w.get("mume")
     return w.scene('シェアハウスの住人',
             w.cmd.change_stage("House"),
+            w.cmd.change_time("night"),
             w.plot_note("$mumeは家賃三万のシェアハウスで何とか暮らしていた"),
             w.plot_note("同じシェアハウスの住人の$ishiが、新しい彼女を連れて帰ってくる"),
+            mume.come("帰ってくる$S"),
+            mume.do("夕暮れた住宅街を歩いて、そのシェアハウスの玄関を潜る"),
+            mume.do("名前は『$House』だがオーナーが僧侶だという訳ではない"),
+            mume.do("今のオーナーの父親が誰でも好きなように暮らせることを願って名前などいらないと付けたらしい"),
+            mume.do("築四十五年であちこちボロがある"),
+            mume.do("シェアハウスは数年前から始めている"),
+            mume.do("$Sが入った当初は自分を含めて三人の男性が暮らしていたが、一人が転職を機に抜けてしまい、現在二人だけだった"),
+            mume.do("オーナーは半分道楽みたいなもんだと言っているが本当は苦しいところだろう"),
+            mume.do("まだ玄関の上の電灯はひび割れたまま"),
             )
 
-
-def ishi_girlfriend(w: World):
-    return w.scene("$ishiの彼女",
-            w.cmd.change_stage("House"),
-            w.plot_note("$ishiは芸人をしているらしいが、あまり外出することもなく、ゲームばかりして暮らしている"),
-            w.plot_note("パシリに使われる新しい彼女の$yuna"),
-            w.plot_note("前の彼女とは違い、あまり料理はしないタイプだと$mumeは思った"),
-            )
 
 
 def nohome_ishi(w: World):
+    mume = w.get("mume")
     return w.scene("帰らない$ishi",
             w.cmd.change_stage("House"),
             w.plot_note("しばらく$ishiが家に帰ってこなくなった"),
@@ -43,6 +47,7 @@ def nohome_ishi(w: World):
 
 
 def help_yuna(w: World):
+    mume = w.get("mume")
     return w.scene("$yunaを助けた",
             w.cmd.change_stage("House"),
             w.plot_note("$mumeは$yunaを部屋の中に運び、共用リビングのソファに寝かせる"),
@@ -50,6 +55,7 @@ def help_yuna(w: World):
 
 
 def talk_with_yuna(w: World):
+    mume = w.get("mume")
     return w.scene("$yunaと話す",
             w.cmd.change_stage("House"),
             w.plot_note("夜中に小説を書いていると$yunaが起きてきた"),
@@ -62,6 +68,7 @@ def talk_with_yuna(w: World):
 
 
 def yuna_and_ishi(w: World):
+    mume = w.get("mume")
     return w.scene("$yunaと$ishiの関係",
             w.cmd.change_stage("House"),
             w.plot_note("$mumeは$yunaに$ishiの気持ちを自分なりに解釈して代弁した"),
@@ -81,6 +88,7 @@ def yuna_and_ishi(w: World):
 
 
 def mume_suggestion(w: World):
+    mume = w.get("mume")
     return w.scene("$mumeの提案",
             w.cmd.change_stage("House"),
             w.plot_note("今後どうするのか聞いたが、$yunaは特に何も目標がないと言った"),
@@ -91,6 +99,7 @@ def mume_suggestion(w: World):
 
 
 def yunas_nothing_day(w: World):
+    mume = w.get("mume")
     return w.scene("$yunaの何もない一日",
             w.cmd.change_stage("House"),
             w.plot_note("$yunaは一日何もせずにぼーっとしていることも多かった"),
@@ -107,6 +116,7 @@ def yunas_nothing_day(w: World):
 
 
 def yuna_need_advice(w: World):
+    mume = w.get("mume")
     return w.scene("$yunaの相談",
             w.cmd.change_stage("House"),
             w.plot_note("$mumeは$yunaと半同棲のような生活を送っていた"),
@@ -123,6 +133,7 @@ def yuna_need_advice(w: World):
 
 
 def vanishing_yuna(w: World):
+    mume = w.get("mume")
     return w.scene("姿を消す$yuna",
             w.cmd.change_stage("House"),
             w.plot_note("それが書かれた翌日から$yunaはシェアハウスから姿を消した"),
@@ -136,6 +147,7 @@ def vanishing_yuna(w: World):
 
 
 def comeback_ishi(w: World):
+    mume = w.get("mume")
     return w.scene("$ishiの帰還",
             w.cmd.change_stage("House"),
             w.plot_note("$mumeは$yunaについて調べようと$ishiに連絡を取る"),
@@ -145,6 +157,7 @@ def comeback_ishi(w: World):
 
 
 def goout_ishi(w: World):
+    mume = w.get("mume")
     return w.scene("出ていく$ishi",
             w.cmd.change_stage("House"),
             w.plot_note("$mumeはシェアハウスに$ishiが戻ってきて、出ていく準備をしているのを見る"),

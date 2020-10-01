@@ -11,8 +11,11 @@ from storybuilder.builder.world import World
 
 ## scenes
 def his_dream(w: World):
+    mume = w.get("mume")
     return w.scene('$mumeの夢',
             w.cmd.change_stage("MumeRoom"),
+            w.cmd.change_time("night"),
+            w.cmd.change_date("FirstMeet"),
             w.plot_note("$mumeは自室にこもり、小説のプロットを書く"),
             w.plot_note("インターネット黎明期なら自分でホームページを作り、そこに駄文を掲載した"),
             w.plot_note("それを小学生の$Sはよく読んでいた"),
@@ -22,10 +25,26 @@ def his_dream(w: World):
             w.plot_note("一定のファンがついている人たち"),
             w.plot_note("しかし$mumeは無風。無名で、たまに読んでくれる人がいても、コメントも何もなく、分からない"),
             w.plot_note("その他大勢の投稿者の一人だった"),
+            mume.come("自室に入ってくる"),
+            mume.do("明かりをつけて、荷物をベッドの上に置く"),
+            mume.do("六畳程度の部屋にベッドとテーブル、パソコン、小物ケースが三段"),
+            mume.do("ここが$mumeの生活のほとんどで、書斎でもあった"),
+            mume.do("小さな冷蔵庫から取り出したペットボトルから、水をコップに移して飲む"),
+            mume.do("パソコンを立ち上げ、その間にスマホを確認する"),
+            mume.do("$mutsuから「今日はありがとう」というメッセージ付きイラストが送られていた"),
+            mume.think("そんな気軽に自分のコンテンツを使える彼女が、正直羨ましかった"),
+            mume.do("ブラウザを開き、ウェブ小説投稿サイトを確認する"),
+            mume.do("自分の投稿した作品にいったいいくら$pvがついているかとか、レビューはないかとか、そういった諸々を確認する"),
+            mume.do("でもほとんど変動がなく、がっかりするばかり"),
+            mume.do("そしてサイトトップには「書籍化します」といった言葉をタイトル脇につけている作品ばかりが目立つ"),
+            mume.do("自分はどこでも無名なままだと思う"),
+            mume.do("そのサイトを閉じて、書きかけている小説の続きを書こうとする"),
+            mume.do("タイトルは無題のままだった"),
             )
 
 
 def popular_mutsu(w: World):
+    mume = w.get("mume")
     return w.scene("$mutsuの人気",
             w.cmd.change_stage("MumeRoom"),
             w.plot_note("一方イラストという違いはあれど$mutsuは少しずつファンを増やしていた"),
@@ -34,16 +53,31 @@ def popular_mutsu(w: World):
 
 
 def this_blog(w: World):
+    mume = w.get("mume")
     return w.scene("あるブログ",
             w.cmd.change_stage("MumeRoom"),
             w.plot_note("ネットで情報を探している中で「$theblog」というブログを見つける"),
             w.plot_note("そこにはかつて有名になったことで周囲の人間関係がおかしくなり、やがて逃げ出したことが書かれていた"),
             w.plot_note("コメントには嫉妬や称賛、ただの悪口、悪戯と様々な人間の感情がうずまいていた"),
             w.plot_note("$mumeはそれでも有名になりたい、と考えていた"),
+            mume.come("帰宅する"),
+            mume.do("部屋は真っ暗なままで、まだ$ishiは帰ってなさそうだった"),
+            mume.do("コンビニ弁当を食べてゴミを処理すると、パソコンの前に座る"),
+            mume.do("しばらく小説の続きを書こうとしたが、まだ言われたことが引っかかっていて、全然進まない"),
+            mume.do("ワープロソフトを閉じて、ブラウザを開く"),
+            mume.do("最近あるブログを読みふけっていた"),
+            mume.do("ブログは『$theblog』というタイトルで"),
+            mume.do("内容は子役で一時期だけ有名になった人間が、そのことで家庭崩壊し、もう名前を無くしてしまいたいと最後に書いているものだった"),
+            mume.do("それを読み、$Sはそのことすらどこか羨ましく感じてしまう"),
+            mume.do("コメント欄には死ねばいいとか金はいっぱいあるんだろ等と嫉妬と怨嗟のものがよく目立って見えた"),
+            mume.do("ただ中にはかわいそうとか同情するものがあった"),
+            mume.do("$Sは何度かコメントを書き込もうとするのだが、何も書けない"),
+            mume.do("読ませてもらいました、と一月くらい前に書いたものが残っている"),
             )
 
 
 def depart_mutsu(w: World):
+    mume = w.get("mume")
     return w.scene("$mutsuとの別れ",
             w.cmd.change_stage("MumeRoom"),
             w.plot_note("ある日彼女から別れたいと連絡があった"),
@@ -53,6 +87,7 @@ def depart_mutsu(w: World):
 
 
 def wasted_time(w: World):
+    mume = w.get("mume")
     return w.scene("無駄な時間",
             w.cmd.change_stage("MumeRoom"),
             w.plot_note("$mutsuと別れてから、不思議と時間が生まれた"),
@@ -63,6 +98,7 @@ def wasted_time(w: World):
 
 
 def writing_novels(w: World):
+    mume = w.get("mume")
     return w.scene("小説を書く時間",
             w.cmd.change_stage("MumeRoom"),
             w.plot_note("中途半端だった小説に時間をかける$mume"),
@@ -74,6 +110,7 @@ def writing_novels(w: World):
 
 
 def researching_streamer(w: World):
+    mume = w.get("mume")
     return w.scene("実況配信の研究",
             w.cmd.change_stage("MumeRoom"),
             w.plot_note("色々な実況や配信、動画を見て回る"),
@@ -87,6 +124,7 @@ def researching_streamer(w: World):
 
 
 def notfound_myname(w: World):
+    mume = w.get("mume")
     return w.scene("名前が見つからない",
             w.cmd.change_stage("MumeRoom"),
             w.plot_note("自分の作品を読んでくれていた人の名が、公募の最終選考にあるのを見つけた"),
@@ -97,6 +135,7 @@ def notfound_myname(w: World):
 
 
 def sns_words(w: World):
+    mume = w.get("mume")
     return w.scene("$SNSの言葉たち",
             w.cmd.change_stage("MumeRoom"),
             w.plot_note("別の公募の結果も出て、全滅なことが判明する"),
@@ -110,6 +149,7 @@ def sns_words(w: World):
 
 
 def deleting_novels(w: World):
+    mume = w.get("mume")
     return w.scene("そして小説を消した",
             w.cmd.change_stage("MumeRoom"),
             w.plot_note("徹夜して今まで自分が書いたものに、本当に才能はないのかと探した"),
@@ -118,6 +158,7 @@ def deleting_novels(w: World):
 
 
 def contact_from_publisher(w: World):
+    mume = w.get("mume")
     return w.scene("出版社からの連絡",
             w.cmd.change_stage("MumeRoom"),
             w.plot_note("引っ越しも考え始めた頃、$mumeに出版社から連絡がある"),
@@ -126,6 +167,7 @@ def contact_from_publisher(w: World):
 
 
 def yuna_blog(w: World):
+    mume = w.get("mume")
     return w.scene("$yunaのブログ",
             w.cmd.change_stage("MumeRoom"),
             w.plot_note("話の中でライターの仕事をしていると言った流れから$yunaのことが話題にでる"),

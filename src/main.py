@@ -16,7 +16,7 @@ from scenes import AroundPH
 from scenes import Bar
 from scenes import BookShop
 from scenes import Cafe
-from scenes import Cafe
+from scenes import Conveni
 from scenes import Famires
 from scenes import House
 from scenes import IshiRoom
@@ -48,7 +48,7 @@ from scenes import YunaHome
 
 # Constant
 TITLE = "無名"
-MAJOR, MINOR, MICRO = 0, 6, 0
+MAJOR, MINOR, MICRO = 0, 7, 0
 COPY = "名前に振り回された人生でした"
 ONELINE = "約３万字の文学短編。有名になりたい男と無名になりたい女の人生が、交錯する"
 OUTLINE = "有名になりたい男は試行錯誤するけれど、その間にも同居するその界隈で有名な女は更に有名になり、無名になりたいと願う。二人は人生の交換を申し出た"
@@ -87,10 +87,11 @@ def ep_share_house(w: World):
             w.plot_setup("$mumeはシェアハウスで$ishiと暮らしていた"),
             "シェアハウス：住人",
             House.resident(w),
+            Living.introduction_house(w),
             w.plot_setup("$ishiは芸人で新しい彼女$yunaをよく連れ込んでいた"),
             w.plot_setup("$yunaは$ishiと付き合っている", about="yuna"),
             "シェアハウス：$ishiの彼女",
-            House.ishi_girlfriend(w),
+            Living.ishi_girlfriend(w),
             )
 
 def ep_want_famous(w: World):
@@ -98,9 +99,11 @@ def ep_want_famous(w: World):
             w.plot_setup("$mumeは色々とやって売れることを目指していた"),
             "自室：$mumeの夢",
             MumeRoom.his_dream(w),
+            Cafe.sub_work(w),
             w.plot_setup("人気になりつつある$mutsu"),
             "自室：$mutsuの人気",
-            MumeRoom.popular_mutsu(w),
+            MumeRoom.popular_mutsu(w).omit(),
+            Conveni.thought_of_famous(w),
             w.plot_setup("$mumeはブログ「$theblog」を読んで、それでも有名に憧れを抱いていた"),
             "自室：あるブログ",
             MumeRoom.this_blog(w),
@@ -108,12 +111,12 @@ def ep_want_famous(w: World):
             "喫茶店：仕事とビッグニュース",
             Cafe.bignews(w),
             w.plot_setup("$mumeは$mutsuから別れると連絡を受ける"),
-            "自室：$mutsuとの別れ",
-            MumeRoom.depart_mutsu(w),
             )
 
 def ep_nothing_any(w: World):
     return w.episode("何もない男",
+            "自室：$mutsuとの別れ",
+            MumeRoom.depart_mutsu(w),
             w.plot_setup("$mumeは再び大切なものを失った"),
             "自室：無駄な時間",
             MumeRoom.wasted_time(w),
